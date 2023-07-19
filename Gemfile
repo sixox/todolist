@@ -59,12 +59,14 @@ end
 
 group :production do
   gem 'pg'
+  gem 'passenger'
+
 end
+
 group :development do
 
   gem "bcrypt_pbkdf", require: false
   gem "ed25519", require: false
-
   # Use console on exceptions pages [https://github.com/rails/web-console]
   gem "web-console"
 
