@@ -1,16 +1,30 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Todolist</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
-
-    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+<head>
+  <title>Todolist</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
     <%= javascript_importmap_tags %>
-  </head>
 
-  <body>
-    <%= yield %>
-  </body>
+  <link rel="stylesheet" href="/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/css/animations.css">
+  <link rel="stylesheet" href="/css/font-awesome5.css">
+  <link rel="stylesheet" href="/css/icomoon.css">
+  <link rel="stylesheet" href="/css/main.css" class="color-switcher-link">
+  <link rel="stylesheet" href="/css/shop.css" class="color-switcher-link">
+
+
+  <script src="/vendor/modernizr-2.6.2.min.js"></script>
+
+  <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+</head>
+
+<body>
+  <%= yield %>
+
+
+  <script src="/javascripts/compressed.js"></script>
+  <script src="/javascripts/main.js"></script>
+</body>
 </html>
