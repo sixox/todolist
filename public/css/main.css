@@ -774,7 +774,7 @@ select,
 
 select {
 	-webkit-appearance: none;
-	background-image: url(../img/select-arrow.png);
+	background-image: url(/images/img/select-arrow.png);
 	background-position: 92% 50%;
 	background-repeat: no-repeat;
 }
@@ -3370,7 +3370,7 @@ a.pswp__share--download:hover {
 
 .pswp__preloader--active .pswp__preloader__icn {
 	/* We use .gif in browsers that don't support CSS animation */
-	background: url(../images/img/photoswipe/preloader.gif) 0 0 no-repeat;
+	background: url(/images/img/photoswipe/preloader.gif) 0 0 no-repeat;
 }
 
 .pswp--css_animation .pswp__preloader--active {
@@ -11354,7 +11354,7 @@ img {
 }
 
 .preloader_image {
-	background: url(../images/img/preloader.gif) no-repeat 50% 50% transparent;
+	background: url(/images/img/preloader.gif) no-repeat 50% 50% transparent;
 	height: 256px;
 	left: 50%;
 	margin: -128px 0 0 -128px;
@@ -11402,47 +11402,47 @@ body.boxed {
 }
 
 .pattern1 {
-	background-image: url(../img/patterns/pattern0.png);
+	background-image: url(/images/img/patterns/pattern0.png);
 }
 
 .pattern2 {
-	background-image: url(../img/patterns/pattern1.png);
+	background-image: url(/images/img/patterns/pattern1.png);
 }
 
 .pattern3 {
-	background-image: url(../img/patterns/pattern2.png);
+	background-image: url(/images/img/patterns/pattern2.png);
 }
 
 .pattern4 {
-	background-image: url(../img/patterns/pattern3.png);
+	background-image: url(/images/img/patterns/pattern3.png);
 }
 
 .pattern5 {
-	background-image: url(../img/patterns/pattern4.png);
+	background-image: url(/images/img/patterns/pattern4.png);
 }
 
 .pattern6 {
-	background-image: url(../img/patterns/pattern6.png);
+	background-image: url(/images/img/patterns/pattern6.png);
 }
 
 .pattern7 {
-	background-image: url(../img/patterns/pattern7.png);
+	background-image: url(/images/img/patterns/pattern7.png);
 }
 
 .pattern8 {
-	background-image: url(../img/patterns/pattern8.png);
+	background-image: url(/images/img/patterns/pattern8.png);
 }
 
 .pattern9 {
-	background-image: url(../img/patterns/pattern9.png);
+	background-image: url(/images/img/patterns/pattern9.png);
 }
 
 .pattern10 {
-	background-image: url(../img/patterns/pattern10.png);
+	background-image: url(/images/img/patterns/pattern10.png);
 }
 
 .pattern11 {
-	background-image: url(../img/patterns/pattern11.png);
+	background-image: url(/images/img/patterns/pattern11.png);
 }
 
 .boxed .container {
@@ -13124,7 +13124,7 @@ body.boxed {
 
 .ds .ls select.form-control {
 	-webkit-appearance: none;
-	background-image: url(../img/select-arrow.png);
+	background-image: url(/images/img/select-arrow.png);
 	background-position: 92% 50%;
 	background-repeat: no-repeat;
 }
