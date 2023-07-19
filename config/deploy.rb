@@ -2,7 +2,7 @@
 lock "~> 3.17.3"
 
 set :application, "todolist"
-set :repo_url, "git@github.com:sixox/todolist.git"
+set :repo_url, "git@example.com:sixox/todolist.git"
 set :branch, "main"
 
 # Default branch is :master
@@ -12,7 +12,7 @@ set :branch, "main"
 # set :deploy_to, "/var/www/my_app_name"
 set :deploy_to, "/home/deploy/#{fetch :application}"
 
-set :rbenv_prefix, '/usr/bin/rbenv exec' # Cf issue: https://github.com/capistrano/rbenv/issues/96
+set :rbenv_prefix, '/home/deploy/.rbenv/bin/rbenv exec' # Cf issue: https://github.com/capistrano/rbenv/issues/96
 
 append :linked_dirs, 'log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'vendor/bundle', '.bundle', 'public/system', 'public/uploads'
 
