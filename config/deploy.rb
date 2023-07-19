@@ -3,6 +3,7 @@ lock "~> 3.17.3"
 
 set :application, "todolist"
 set :repo_url, "git@example.com:sixox/todolist.git"
+set :branch, "main"
 
 # Default branch is :master
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
