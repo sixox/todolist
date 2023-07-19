@@ -888,7 +888,7 @@ select[multiple] {
 
 select {
 	-webkit-appearance: none;
-	background-image: url(../img/select-arrow.png);
+	background-image: url(/images/img/select-arrow.png);
 	background-position: 92% 50%;
 	background-repeat: no-repeat;
 }
@@ -3056,7 +3056,7 @@ html[xmlns] .slides {
 .pswp__button,
 .pswp__button--arrow--left:before,
 .pswp__button--arrow--right:before {
-	background: url(../img/photoswipe/default-skin.png) 0 0 no-repeat;
+	background: url(/images/img/photoswipe/default-skin.png) 0 0 no-repeat;
 	background-size: 264px 88px;
 	height: 44px;
 	width: 44px;
@@ -3067,7 +3067,7 @@ html[xmlns] .slides {
 	.pswp--svg .pswp__button,
 	.pswp--svg .pswp__button--arrow--left:before,
 	.pswp--svg .pswp__button--arrow--right:before {
-		background-image: url(../img/photoswipe/default-skin.svg);
+		background-image: url(/images/img/photoswipe/default-skin.svg);
 	}
 
 	.pswp--svg .pswp__button--arrow--left,
@@ -11014,11 +11014,11 @@ img {
 }
 
 .texture-background {
-	background-image: url(../img/background-texture-cover.jpg);
+	background-image: url(/images/background-texture-cover.jpg);
 }
 
 .pattern-background:before {
-	background-image: url(../img/patterns/pattern0.png);
+	background-image: url(/images/img/patterns/pattern0.png);
 }
 
 @media (min-width: 991px) {
@@ -21710,7 +21710,7 @@ filters
 	content: "";
 	height: 194px;
 	left: 50%;
-	-webkit-mask: url(../img/dots-vertical.png);
+	-webkit-mask: url(/images/img/dots-vertical.png);
 	-webkit-mask-repeat: no-repeat;
 	position: absolute;
 	-webkit-transform: translateX(-50%);
