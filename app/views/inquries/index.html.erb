@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Inquries</h1>
+
+<div id="inquries">
+  <% @inquries.each do |inqury| %>
+    <%= render inqury %>
+    <p>
+      <%= link_to "Show this inqury", inqury %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New inqury", new_inqury_path %>
