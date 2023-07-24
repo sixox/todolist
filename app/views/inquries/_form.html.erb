@@ -11,8 +11,7 @@
 </div>
 <% end %>
 
-<div class="canvas">
-  <div class="box_wrapper">
+
     <section class="ls s-pt-xl-160 s-pb-xl-280 s-pt-lg-130 s-pb-lg-250 s-py-md-90 s-py-60">
       <div class="container">
         <div class="row ds s-parallax s-overlay s-map-light">
@@ -113,8 +112,10 @@
                   <div class="row c-mb-10 c-gutter-10">
                     <div class="col-sm-12 mb-0 mt-50 text-center">
                       <div class="form-group ">
-                        <%= form.submit "Send Inquiry", class: "btn btn-gradient big-btn" %>
-                          <%= link_to "Home", root_path %> |
+                        <%= form.submit "Send Inquiry", class: "btn btn-gradient big-btn", data: { turbo: false } %>
+                        <%= link_to "Home", root_path %> |
+                        <%= link_to "Home", root_path, data: { turbo: false } %> |
+
 
                       </div>
                     </div>
@@ -132,6 +133,5 @@
       </div>
     </section>
 
-  </div>
-</div>
+
 <% end %>

@@ -5,7 +5,8 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <%= csrf_meta_tags %>
   <%= csp_meta_tag %>
-    <%= javascript_importmap_tags %>
+
+  <%= javascript_importmap_tags %>
 
   <link rel="stylesheet" href="/css/bootstrap.min.css">
   <link rel="stylesheet" href="/css/animations.css">
@@ -21,10 +22,16 @@
 </head>
 
 <body>
-  <%= yield %>
-
-
+  <%= render "layouts/topbar"%>
+  <div id="canvas">
+    <div id="box_wrapper">
+      <%= render "layouts/header"%>
+      <%= yield %>
+      <%= render "layouts/footer"%>
+    </div>
+  </div>
   <script src="/javascripts/compressed.js"></script>
   <script src="/javascripts/main.js"></script>
+
 </body>
 </html>
