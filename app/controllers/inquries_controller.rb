@@ -25,7 +25,7 @@ class InquriesController < ApplicationController
 
     respond_to do |format|
       if @inqury.save
-        format.html { redirect_to inqury_url(@inqury), notice: "Inqury was successfully created." }
+        format.html { redirect_to new_inqury_path, notice: "Inqury was successfully created." }
         format.json { render :show, status: :created, location: @inqury }
       else
         format.html { render :new, status: :unprocessable_entity }
