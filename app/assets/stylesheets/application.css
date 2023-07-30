@@ -14,10 +14,22 @@
  *= require_self
  */
 .page_header.ds.affix {
-    background: #d0d4d5 !important;
+    /*background: #d0d4d5 !important;*/
+    background: #677b72 !important;
+
 }
 
-.ds {
+.product-menu {
     /*background-color: #367f2d;*/
-    background-color: #3b5142;
+    background-color: #228140;
+    /*background-color: #677b72;*/
 }
+.logo-footer {
+    min-width: 290px;
+}
+.page_footer {
+    /*background: #d0d4d5 !important;*/
+    background: #677b72 !important;
+
+}
+
