@@ -17,6 +17,7 @@
     background: #d0d4d5 !important;
 }
 
-/*.toggle_menu_side:before, .toggle_menu_side span:before, .toggle_menu_side span:after, .toggle_menu_side span {
-    background-color: ##6c757d !important;
-}*/
+.ds {
+    /*background-color: #367f2d;*/
+    background-color: #3b5142;
+}
