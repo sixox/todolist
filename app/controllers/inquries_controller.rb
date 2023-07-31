@@ -24,7 +24,7 @@ class InquriesController < ApplicationController
     @inqury = Inqury.new(inqury_params)
 
     respond_to do |format|
-      if @inqury.save
+      if verify_recaptcha(model: @inqury) && @inqury.save
         format.html { redirect_to new_inqury_path, notice: "Inqury was successfully created." }
         format.json { render :show, status: :created, location: @inqury }
       else
