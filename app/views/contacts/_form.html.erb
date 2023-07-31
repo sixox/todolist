@@ -1,0 +1,65 @@
+ <%= form_with(model: contact) do |form| %>
+  <% if contact.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(contact.errors.count, "error") %> prohibited this contact from being saved:</h2>
+
+      <ul>
+        <% contact.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div id="write_us" class="col-lg-4 col-md-12 ls order-3 order-lg-2 footer-special-column text-center animate" data-animation="fadeInUp">
+        <div class="form-wrapper">
+          <form class="contact-form" method="post" action="/">
+            <div class="row c-mb-20">
+              <div class="col-12 form-title text-center form-builder-item">
+                <div class="header title">
+                  <h2>Write Us</h2>
+                </div>
+              </div>
+            </div>
+            <div class="row c-mb-10 c-gutter-10">
+              <div class="col-lg-12 text-center">
+                <div class="form-group has-placeholder">
+                  <label for="name22335x5553">Full Name <span class="required">*</span></label>
+<%= form.text_field :full_name, class: "form-control", placeholder: "Full Name", required: true %>
+
+                </div>
+              </div>
+            </div>
+            <div class="row c-mb-10 c-gutter-10">
+              <div class="col-lg-12 text-center">
+                <div class="form-group has-placeholder">
+                  <label for="name223355553">Phone Number <span class="required">*</span></label>
+
+<%= form.text_field :phone, class: "form-control", placeholder: "Phone Number", required: true %>
+                </div>
+              </div>
+            </div>
+            <div class="row c-mb-10 c-gutter-10">
+              <div class="col-sm-12 text-center">
+                <div class="form-group has-placeholder">
+                  <label for="message22335553">Message</label>
+
+<%= form.text_area :message, class: "form-control", placeholder: "Your Message", required: true, rows: 6, cols: 45 %>
+                </div>
+              </div>
+            </div>
+            <div class="row c-mb-10 c-gutter-10">
+              <div class="col-sm-12 mb-0 mt-50">
+                <div class="form-group">
+                  <input class="btn btn-gradient big-btn" type="submit" value="Send message">
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+        <h6 class="fs-12 text-uppercase">&copy; Copyright <span class="copyright_year">2023</span> All Rights Reserved</h6>
+      </div>
+
+<% end %>
+
+
