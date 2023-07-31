@@ -12,133 +12,126 @@
 <% end %>
 
 
-    <section class="ls s-pt-xl-160 s-pb-xl-280 s-pt-lg-130 s-pb-lg-250 s-py-md-90 s-py-60">
-      <div class="container">
-        <div class="row ds s-parallax s-overlay s-map-light">
+<section class="ls s-pt-xl-160 s-pb-xl-280 s-pt-lg-130 s-pb-lg-250 s-py-md-90 s-py-60">
+  <div class="container">
+    <div class="row ds s-parallax s-overlay s-map-light">
 
 
-          <div class="col-12 col-xl-8 offset-xl-2 animate" data-animation="scaleAppear">
+      <div class="col-12 col-xl-8 offset-xl-2 animate" data-animation="scaleAppear">
 
-            <div class=" py-60">
+        <div class=" py-60">
 
-              <div class="form-wrapper ls rounded">
-                <form class="contact-form" method="post" action="/">
-                  <div class="row c-mb-20">
-                    <div class="col-12 form-title text-center form-builder-item">
-                      <div class="header title">
-                        <h4>Inquiry Form</h4>
-                      </div>
+          <div class="form-wrapper ls rounded">
+            <form class="contact-form" method="post" action="/">
+              <div class="row c-mb-20">
+                <div class="col-12 form-title text-center form-builder-item">
+                  <div class="header title">
+                    <h4>Inquiry Form</h4>
+                  </div>
+                </div>
+              </div>
+              <div class="buyer-info">
+                <div class="row c-mb-10 c-gutter-10">
+                  <div class="col-lg-6">
+                    <div class="form-group has-placeholder">
+                      <label for="name335x5553">Full Name <span class="required">*</span></label>
+                      <i class="fas fa-user"></i>
+                      <%= form.text_field :full_name, class: "form-control",placeholder: "Full Name", aria: { required: "true" }, size: 30 %>
+
                     </div>
                   </div>
-                  <div class="buyer-info">
-                    <div class="row c-mb-10 c-gutter-10">
-                      <div class="col-lg-6">
-                        <div class="form-group has-placeholder">
-                          <label for="name335x5553">Full Name <span class="required">*</span></label>
-                          <i class="fas fa-user"></i>
-                          <%= form.text_field :full_name, class: "form-control",placeholder: "Full Name", aria: { required: "true" }, size: 30 %>
-
-                        </div>
-                      </div>
-                      <div class="col-lg-6">
-                        <div class="form-group has-placeholder">
-                          <label for="email333">Email address<span class="required">*</span></label>
-                          <i class="fas fa-envelope"></i>
-                          <%= form.email_field :email, class: "form-control", placeholder: "Email", aria: { required: "true" }, size: 30 %>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="row c-mb-10 c-gutter-10">
-                      <div class="col-lg-6">
-                        <div class="form-group has-placeholder">
-                          <label for="name3355553">Phone Number <span class="required">*</span></label>
-                          <i class="fas fa-phone"></i>
-                          <%= form.text_field :phone, class: "form-control", placeholder: "Phone Number", aria: { required: "true" }, size: 30 %>
-                        </div>
-                      </div>
-                      <div class="col-lg-6">
-                        <div class="form-group has-placeholder">
-                          <label for="name3355d553">Subject <span class="required">*</span></label>
-                          <i class="fas fa-shopping-bag"></i>
-                          <%= form.text_field :company, class: "form-control", placeholder: "Company", aria: { required: "true" }, size: 30 %>
-                        </div>
-                      </div>
+                  <div class="col-lg-6">
+                    <div class="form-group has-placeholder">
+                      <label for="email333">Email address<span class="required">*</span></label>
+                      <i class="fas fa-envelope"></i>
+                      <%= form.email_field :email, class: "form-control", placeholder: "Email", aria: { required: "true" }, size: 30 %>
                     </div>
                   </div>
-                  <div class="inqury-info">
-                    <div class="row c-mb-10 c-gutter-10">
-                      <div class="col-lg-6">
-                        <div class="form-group has-placeholder">
-                          <label for="name335x5553">Full Name <span class="required">*</span></label>
-                          <i class="fas fa-database"></i>
-                          <%= form.text_field :product, class: "form-control",placeholder: "Product", aria: { required: "true" }, size: 30 %>
-
-                        </div>
-                      </div>
-                      <div class="col-lg-6">
-                        <div class="form-group has-placeholder">
-                          <label for="email333">Email address<span class="required">*</span></label>
-                          <i class="fas fa-archive"></i>
-                          <%= form.text_field :packing, class: "form-control", placeholder: "packing", aria: { required: "true" }, size: 30 %>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="row c-mb-10 c-gutter-10">
-                      <div class="col-lg-6">
-                        <div class="form-group has-placeholder">
-                          <label for="name3355553">Phone Number <span class="required">*</span></label>
-                          <i class="fas fa-map"></i>
-                          <%= form.text_field :country, class: "form-control", placeholder: "country", aria: { required: "true" }, size: 30 %>
-                        </div>
-                      </div>
-                      <div class="col-lg-6">
-                        <div class="form-group has-placeholder">
-                          <label for="name3355d553">Subject <span class="required">*</span></label>
-                          <i class="fas fa-anchor"></i>
-                          <%= form.text_field :port, class: "form-control", placeholder: "Port of discharge", aria: { required: "true" }, size: 30 %>
-                        </div>
-                      </div>
+                </div>
+                <div class="row c-mb-10 c-gutter-10">
+                  <div class="col-lg-6">
+                    <div class="form-group has-placeholder">
+                      <label for="name3355553">Phone Number <span class="required">*</span></label>
+                      <i class="fas fa-phone"></i>
+                      <%= form.text_field :phone, class: "form-control", placeholder: "Phone Number", aria: { required: "true" }, size: 30 %>
                     </div>
                   </div>
-                  <div class="row c-mb-10 c-gutter-10">
-                    <div class="col-sm-12">
-                      <div class="form-group has-placeholder">
-                        <label for="message335553">Message</label>
-                        <i class="fas fa-edit"></i>
-                        <%= form.text_area :message, class: "form-control", aria: { required: "true" }, rows: 3, cols: 45, placeholder: "Details" %>
-                      </div>
+                  <div class="col-lg-6">
+                    <div class="form-group has-placeholder">
+                      <label for="name3355d553">Subject <span class="required">*</span></label>
+                      <i class="fas fa-shopping-bag"></i>
+                      <%= form.text_field :company, class: "form-control", placeholder: "Company", aria: { required: "true" }, size: 30 %>
                     </div>
                   </div>
-                                    <div class="row c-mb-10 c-gutter-10">
-                    <div class="col-sm-12 mt-2">
-                      <div class="form-group has-placeholder">
-                        <label for="message335553">Message</label>
-<%= recaptcha_tags %>
-                      </div>
+                </div>
+              </div>
+              <div class="inqury-info">
+                <div class="row c-mb-10 c-gutter-10">
+                  <div class="col-lg-6">
+                    <div class="form-group has-placeholder">
+                      <label for="name335x5553">Full Name <span class="required">*</span></label>
+                      <i class="fas fa-database"></i>
+                      <%= form.text_field :product, class: "form-control",placeholder: "Product", aria: { required: "true" }, size: 30 %>
+
                     </div>
                   </div>
-                  <div class="row c-mb-10 c-gutter-10">
-                    <div class="col-sm-12 mb-0 mt-50 text-center">
-                      <div class="form-group ">
-                        <%= form.submit "Send Inquiry", class: "btn btn-gradient big-btn", data: { turbo: false } %>
-
-
-
-                      </div>
+                  <div class="col-lg-6">
+                    <div class="form-group has-placeholder">
+                      <label for="email333">Email address<span class="required">*</span></label>
+                      <i class="fas fa-archive"></i>
+                      <%= form.text_field :packing, class: "form-control", placeholder: "packing", aria: { required: "true" }, size: 30 %>
                     </div>
                   </div>
-                </form>
+                </div>
+                <div class="row c-mb-10 c-gutter-10">
+                  <div class="col-lg-6">
+                    <div class="form-group has-placeholder">
+                      <label for="name3355553">Phone Number <span class="required">*</span></label>
+                      <i class="fas fa-map"></i>
+                      <%= form.text_field :country, class: "form-control", placeholder: "country", aria: { required: "true" }, size: 30 %>
+                    </div>
+                  </div>
+                  <div class="col-lg-6">
+                    <div class="form-group has-placeholder">
+                      <label for="name3355d553">Subject <span class="required">*</span></label>
+                      <i class="fas fa-anchor"></i>
+                      <%= form.text_field :port, class: "form-control", placeholder: "Port of discharge", aria: { required: "true" }, size: 30 %>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row c-mb-10 c-gutter-10">
+                <div class="col-sm-12">
+                  <div class="form-group has-placeholder">
+                    <label for="message335553">Message</label>
+                    <i class="fas fa-edit"></i>
+                    <%= form.text_area :message, class: "form-control", aria: { required: "true" }, rows: 3, cols: 45, placeholder: "Details" %>
+                  </div>
+                </div>
+              </div>
+              <div class="captchas">
+                <%= recaptcha_tags %>
               </div>
 
-            </div>
-
+              <div class="row c-mb-10 c-gutter-10">
+                <div class="col-sm-12 mb-0 mt-50 text-center">
+                  <div class="form-group ">
+                    <%= form.submit "Send Inquiry", class: "btn btn-gradient big-btn", data: { turbo: false } %>
+                  </div>
+                </div>
+              </div>
+            </form>
           </div>
-          <!--.col-* -->
-
 
         </div>
+
       </div>
-    </section>
+      <!--.col-* -->
+
+
+    </div>
+  </div>
+</section>
 
 
 <% end %>

@@ -38,3 +38,9 @@
 .sixox-menu {
     background: #677b72 !important;
 }
+.g-recaptcha {
+    transform:scale(0.77);
+    -webkit-transform:scale(0.77);
+    transform-origin:0 0;
+    -webkit-transform-origin:0 0;
+}
