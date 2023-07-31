@@ -1,15 +1,5 @@
 <%= form_with(model: inqury) do |form| %>
-<% if inqury.errors.any? %>
-<div style="color: red">
-  <h2><%= pluralize(inqury.errors.count, "error") %> prohibited this inqury from being saved:</h2>
 
-  <ul>
-    <% inqury.errors.each do |error| %>
-    <li><%= error.full_message %></li>
-    <% end %>
-  </ul>
-</div>
-<% end %>
 
 
 <section class="ls s-pt-xl-160 s-pb-xl-280 s-pt-lg-130 s-pb-lg-250 s-py-md-90 s-py-60">
@@ -20,6 +10,13 @@
       <div class="col-12 col-xl-8 offset-xl-2 animate" data-animation="scaleAppear">
 
         <div class=" py-60">
+          <% if inqury.errors.any? %>
+  <ul>
+    <% inqury.errors.each do |error| %>
+<div class="alert alert-danger"><%= error.full_message %></div>
+    <% end %>
+  </ul>
+<% end %>
 
           <div class="form-wrapper ls rounded">
             <form class="contact-form" method="post" action="/">

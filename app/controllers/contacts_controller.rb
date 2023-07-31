@@ -29,7 +29,7 @@ class ContactsController < ApplicationController
         format.html { redirect_to root_path, notice: "Contact was successfully created." }
         format.json { render :show, status: :created, location: @contact }
       else
-        format.html { render :new, status: :unprocessable_entity }
+        format.html { redirect_to root_path}
         format.json { render json: @contact.errors, status: :unprocessable_entity }
       end
     end
