@@ -1,0 +1,12 @@
+<h1>Form#index</h1>
+
+
+
+<div id="inquries">
+  <% @inquries.each do |inqury| %>
+    <%= render inqury %>
+    <p>
+      <%= link_to "Show this inqury", inqury %>
+    </p>
+  <% end %>
+</div>
