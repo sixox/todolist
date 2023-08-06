@@ -13,6 +13,7 @@
  *= require_tree .
  *= require_self
  */
+@import "./actiontext.css";
 .page_header.ds.affix {
     /*background: #d0d4d5 !important;*/
     background: #677b72 !important;
