@@ -4,7 +4,7 @@
 
 <!--topline section visible only on small screens|-->
 
-      <%= render "layouts/slide"%>
+<%= render "layouts/slide"%>
 
 
 <section class="product-menu ds text-sm-left text-center container-px-0 c-gutter-0">
@@ -151,14 +151,17 @@
 				</p>
 				<div class="divider-50 hidden-below-lg"></div>
 				<div class="divider-30 hidden-above-lg"></div>
+				<% if @latest_news[2] %>
 				<div class="shortcode-posts row tiled-layout c-gutter-30 c-mb-30">
+					
 					<div class="bigitem col-xl-6 col-lg-5">
 						<article class="vertical-item ls rounded post type-post status-publish format-standard has-post-thumbnail">
 							<div class="item-media post-thumbnail">
-								<a href="#">
-									<%= image_tag 'blog/1.jpg' %>
 
+								<a href="<%= post_path(@latest_news.first) %>" data-turbo="false">
+									<%= image_tag @latest_news.first.image %>
 								</a>
+
 							</div><!-- .post-thumbnail -->
 							<div class="item-content">
 								<header class="entry-header">
@@ -166,7 +169,9 @@
 										<div class="byline">
 											<span class="date">
 												<a href="#" rel="bookmark">
-													<time class="published entry-date" datetime="2019-04-09T12:23:09+00:00">30.07.2023</time>
+													<time class="published entry-date">
+														<%= @latest_news.first.created_at.strftime('%d.%m.%Y') %>
+													</time>
 												</a>
 											</span>
 											<span class="author vcard">
@@ -175,8 +180,9 @@
 										</div>
 									</div>
 									<h4 class="entry-title">
-										<a href="#" rel="bookmark">
-Global Rubber Process Oil Market – Industry Trends and Forecast to 2028										</a>
+										<a href="<%= post_path(@latest_news.first) %>" data-turbo="false" rel="bookmark">
+											<%= @latest_news.first.title %>
+										</a>
 									</h4>
 
 									<!-- .entry-meta -->
@@ -185,17 +191,19 @@ Global Rubber Process Oil Market – Industry Trends and Forecast to 2028							
 
 								<div class="entry-content">
 									<p>
-The rubber process oil market is projected to experience a steady growth rate of 4.45% during the forecast period spanning from 2021 to 2028. This growth can be attributed to the significant expansion of the tire manufacturing industry worldwide, which serves as a key driving force behind the increasing demand for rubber process oil.									</p>
+										<%= truncate_html(@latest_news.first.content.body.to_html, length: 300) %>
+									</p>
 								</div><!-- .entry-content -->
 							</div><!-- .item-content -->
 						</article><!-- #post-## -->
 					</div>
+					
+
 					<div class=" smallitem col-xl-6 col-lg-7">
 						<article class="vertical-item side-item ls rounded post type-post status-publish format-standard has-post-thumbnail">
 							<div class="item-media post-thumbnail">
-								<a href="#">
-									<%= image_tag 'blog/2.jpg' %>
-
+								<a href="<%= post_path(@latest_news[1]) %>" data-turbo="false">
+									<%= image_tag @latest_news[1].image %>
 								</a>
 							</div><!-- .post-thumbnail -->
 							<div class="item-content">
@@ -204,7 +212,9 @@ The rubber process oil market is projected to experience a steady growth rate of
 										<div class="byline">
 											<span class="date">
 												<a href="#" rel="bookmark">
-													<time class="published entry-date" datetime="2019-04-09T12:23:09+00:00">25.07.2023</time>
+													<time class="published entry-date">
+														<%= @latest_news[1].created_at.strftime('%d.%m.%Y') %>
+													</time>
 												</a>
 											</span>
 											<span class="author vcard">
@@ -213,8 +223,8 @@ The rubber process oil market is projected to experience a steady growth rate of
 										</div>
 									</div>
 									<h4 class="entry-title">
-										<a href="#" rel="bookmark">
-Weekly Bitumen Report
+										<a href="<%= post_path(@latest_news[1]) %>" data-turbo="false" rel="bookmark">
+											<%= @latest_news[1].title %>
 										</a>
 									</h4>
 
@@ -224,14 +234,15 @@ Weekly Bitumen Report
 
 								<div class="entry-content">
 									<p>
-Last week, the bitumen industry faced intense competition and the Rial gained strength .. 								</p>
+										<%= truncate_html(@latest_news[1].content.body.to_html, length: 85) %>
+									</p>
 								</div><!-- .entry-content -->
 							</div><!-- .item-content -->
 						</article>
 						<article class="vertical-item side-item ls rounded post type-post status-publish format-standard has-post-thumbnail">
 							<div class="item-media post-thumbnail">
-								<a href="#">
-									<%= image_tag 'blog/3.jpg' %>
+								<a href="<%= post_path(@latest_news[2]) %>" data-turbo="false">
+									<%= image_tag @latest_news[2].image %>
 								</a>
 							</div><!-- .post-thumbnail -->
 							<div class="item-content">
@@ -240,36 +251,40 @@ Last week, the bitumen industry faced intense competition and the Rial gained st
 										<div class="byline">
 											<span class="date">
 												<a href="#" rel="bookmark">
-													<time class="published entry-date" datetime="2019-04-09T12:23:09+00:00">24.07.2023</time>
-												</a>
-											</span>
-											<span class="author vcard">
-												<a class="url fn n" href="#" rel="author"><span>by</span> Amir</a>
-											</span>
+													<time class="published entry-date">
+														<%= @latest_news[2].created_at.strftime('%d.%m.%Y') %>												</time>
+													</a>
+												</span>
+												<span class="author vcard">
+													<a class="url fn n" href="#" rel="author"><span>by</span> Amir</a>
+												</span>
+											</div>
 										</div>
-									</div>
-									<h4 class="entry-title">
-										<a href="#" rel="bookmark">
-Oil markets will face ‘serious problems’ as demand from China and India ramps up:
-										</a>
-									</h4>
+										<h4 class="entry-title">
+											<a href="<%= post_path(@latest_news[2]) %>" data-turbo="false" rel="bookmark">
+												<%= @latest_news[2].title %>
+											</a>
+										</h4>
 
-									<!-- .entry-meta -->
-								</header>
-								<!-- .entry-header -->
+										<!-- .entry-meta -->
+									</header>
+									<!-- .entry-header -->
 
-								<div class="entry-content">
-									<p>
-According to an official from the International Energy Forum, oil prices are expected to increase in the latter half of the year..									</p>
-								</div><!-- .entry-content -->
-							</div><!-- .item-content -->
-						</article>
+									<div class="entry-content">
+										<p>
+											<%= truncate_html(@latest_news[2].content.body.to_html, length: 120) %>
+										</p>
+									</div><!-- .entry-content -->
+								</div><!-- .item-content -->
+							</article>
+						</div>
+
 					</div>
+					<% end %>
+					<div class="mt--30"></div>
 				</div>
-				<div class="mt--30"></div>
 			</div>
 		</div>
-	</div>
-</section>
+	</section>
 
 

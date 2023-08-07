@@ -11,6 +11,8 @@
     </div>
   <% end %>
 
+
+
   <div>
     <%= form.label :title, style: "display: block" %>
     <%= form.text_field :title %>
@@ -18,7 +20,7 @@
 
   <div>
     <%= form.label :content, style: "display: block" %>
-    <%= form.text_area :content %>
+    <%= form.text_area :content, rows: 8 %>
   </div>
 
   <div>
@@ -30,6 +32,14 @@
     <%= form.label :category, style: "display: block" %>
     <%= form.text_field :category %>
   </div>
+  <br>
+    <div>
+    <%= form.label :image %>
+    <%= form.file_field :image, accept: 'image/jpeg, image/jpg, image/png' %>
+    <p class="small">Accepted file formats: JPEG, JPG, PNG</p>
+  </div>
+  <br>
+
 
   <div>
     <%= form.label :tag, style: "display: block" %>
@@ -37,6 +47,5 @@
   </div>
 
   <div>
-    <%= form.submit %>
-  </div>
+ <%= form.submit "create", class: "btn btn-gradient big-btn", data: { turbo: false } %>  </div>
 <% end %>

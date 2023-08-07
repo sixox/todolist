@@ -1,10 +1,24 @@
-<p style="color: green"><%= notice %></p>
-
-<%= render @post %>
-
-<div>
-  <%= link_to "Edit this post", edit_post_path(@post) %> |
-  <%= link_to "Back to posts", posts_path %>
-
-  <%= button_to "Destroy this post", @post, method: :delete %>
-</div>
+<section class="ls ms text-sm-left text-center s-pt-xl-160 s-pt-lg-130 s-pt-md-90 s-pt-60 s-pb-xl-280 s-pb-lg-250 s-pb-md-90 s-pb-60 c-gutter-60">
+  <div class="container">
+    <div class="row">
+      <div class="col-12 col-xl-10 offset-xl-1">
+        <% if @post.image.attached? %>
+        <%= image_tag @post.image, class: 'rounded' %>
+        <% end %>
+        <div class="divider-60 hidden-below-lg"></div>
+        <div class="divider-30 hidden-above-lg"></div>
+        <h2 class="special-heading text-sm-left text-center">
+          <span class="text-capitalize">
+            <%= @post.title %>
+          </span>
+        </h2>
+        <div class="divider-25"></div>
+           <p>
+            <%= @post.content %>
+           </p>
+        <div class="divider-60 hidden-below-lg"></div>
+        <div class="divider-30 hidden-above-lg"></div>
+      </div>
+    </div>
+  </div>
+</section>
