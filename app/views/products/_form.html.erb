@@ -1,0 +1,46 @@
+<%= form_with(model: product) do |form| %>
+  <% if product.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(product.errors.count, "error") %> prohibited this product from being saved:</h2>
+
+      <ul>
+        <% product.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :name, style: "display: block" %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div>
+    <%= form.label :description, style: "display: block" %>
+    <%= form.text_area :description %>
+  </div>
+
+  <div>
+    <%= form.label :content, style: "display: block" %>
+    <%= form.text_area :content %>
+  </div>
+      <h2>Associated Packings:</h2>
+    <%= form.collection_check_boxes :packing_ids, @packings, :id, :name do |builder| %>
+      <div class="form-check">
+        <%= builder.check_box class: "form-check-input" %>
+        <%= builder.label class: "form-check-label" %>
+      </div>
+    <% end %>
+          <h2>Associated applications:</h2>
+
+        <%= form.collection_check_boxes :post_ids, @applications, :id, :title do |builder| %>
+      <div class="form-check">
+        <%= builder.check_box class: "form-check-input" %>
+        <%= builder.label class: "form-check-label" %>
+      </div>
+    <% end %>
+
+  <div>
+<%= form.submit "create product", class: "btn btn-gradient big-btn", data: { turbo: false } %>  </div>
+<% end %>

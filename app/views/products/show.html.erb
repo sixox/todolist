@@ -1,0 +1,21 @@
+<%= render "layouts/slide"%>
+
+<%= render "layouts/productsmenu"%>
+
+
+<section class="ls s-pt-xl-160 s-pt-lg-130 s-pt-md-90 s-pt-60 s-pb-xl-280 s-pb-lg-250 s-pb-md-90 s-pb-60 c-gutter-60">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <p style="color: green"><%= notice %></p>
+
+        <h3>
+          <%= @product.name.titleize %>
+        </h3>
+        <hr>
+        <%= render @product %>
+
+      </div>
+    </div>
+  </div>
+</section>

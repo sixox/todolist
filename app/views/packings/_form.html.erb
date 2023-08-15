@@ -1,0 +1,45 @@
+<%= form_with(model: packing) do |form| %>
+  <% if packing.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(packing.errors.count, "error") %> prohibited this packing from being saved:</h2>
+
+      <ul>
+        <% packing.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :name, style: "display: block" %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div>
+    <%= form.label :description, style: "display: block" %>
+    <%= form.text_area :description %>
+  </div>
+
+  <div>
+    <%= form.label :content, style: "display: block" %>
+    <%= form.text_area :content %>
+  </div>
+    <div>
+    <%= form.label :specification, style: "display: block" %>
+    <%= form.text_area :specification %>
+  </div>
+
+  <div>
+    <h2>Associated Products:</h2>
+    <%= form.collection_check_boxes :product_ids, @products, :id, :name do |builder| %>
+      <div class="form-check">
+        <%= builder.check_box class: "form-check-input" %>
+        <%= builder.label class: "form-check-label" %>
+      </div>
+    <% end %>
+  </div>
+
+  <div>
+<%= form.submit "new packing", class: "btn btn-gradient big-btn", data: { turbo: false } %>    </div>
+<% end %>

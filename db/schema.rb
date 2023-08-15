@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_08_07_055316) do
+ActiveRecord::Schema[7.0].define(version: 2023_08_15_032853) do
   create_table "action_text_rich_texts", force: :cascade do |t|
     t.string "name", null: false
     t.text "body"
@@ -58,6 +58,15 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_07_055316) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "grades", force: :cascade do |t|
+    t.string "name"
+    t.text "description"
+    t.integer "product_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["product_id"], name: "index_grades_on_product_id"
+  end
+
   create_table "inquries", force: :cascade do |t|
     t.string "full_name"
     t.string "email"
@@ -72,6 +81,20 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_07_055316) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "packings", force: :cascade do |t|
+    t.string "name"
+    t.text "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "packings_products", id: false, force: :cascade do |t|
+    t.integer "packing_id", null: false
+    t.integer "product_id", null: false
+    t.index ["packing_id", "product_id"], name: "index_packings_products_on_packing_id_and_product_id"
+    t.index ["product_id", "packing_id"], name: "index_packings_products_on_product_id_and_packing_id"
+  end
+
   create_table "posts", force: :cascade do |t|
     t.string "title"
     t.string "kind"
@@ -81,6 +104,21 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_07_055316) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "posts_products", id: false, force: :cascade do |t|
+    t.integer "post_id", null: false
+    t.integer "product_id", null: false
+    t.index ["post_id", "product_id"], name: "index_posts_products_on_post_id_and_product_id"
+    t.index ["product_id", "post_id"], name: "index_posts_products_on_product_id_and_post_id"
+  end
+
+  create_table "products", force: :cascade do |t|
+    t.string "name"
+    t.text "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "grades", "products"
 end

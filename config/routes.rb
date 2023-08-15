@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  resources :packings
+  resources :grades
+  resources :products
   resources :posts
   get 'form/index'
   resources :contacts, only: [:new, :create, :show]
