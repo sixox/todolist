@@ -38,7 +38,7 @@
         <h6><%= product.name %> applications:</h6>
         <div id="accordion02" role="tablist">
           <% if product.posts %>
-          <% product.posts.each do |application| %>
+          <% product.posts.reverse_each do |application| %>
           <div class="card">
             <div class="card-header" role="tab" id="collapse<%= application.id %>_header">
               <h5>
