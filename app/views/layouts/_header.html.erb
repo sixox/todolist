@@ -10,7 +10,9 @@
 				<div class="widget widget_recent_posts">
 
 					<h3 class="widget-title">Our news</h3>
+					<% if @menu_news_3[2] %>
 					<ul class="list-unstyled">
+						<% @menu_news_3.each do |news|%>
 						<li class="media">
 							<article class="vertical-item  post type-post status-publish format-standard has-post-thumbnail">
 								<div class="item-content">
@@ -18,18 +20,19 @@
 										<div class="entry-meta">
 											<div class="byline">
 												<span class="date">
-													<a href="blog-@@type.html" rel="bookmark">
-														<time class="published entry-date" datetime="2019-04-09T12:23:09+00:00">30.07.2023</time>
+													<a href="#">
+														<time class="published entry-date" datetime="<%= news.updated_at.iso8601 %>">
+															<%= news.updated_at.strftime("%d.%m.%Y") %>
+														</time>
 													</a>
 												</span>
 												<span class="author vcard">
-													<a class="url fn n" href="blog-@@type.html" rel="author"><span>by</span> Amir</a>
+													<a class="url fn n" href="#" rel="author"><span>by</span> Amir</a>
 												</span>
 											</div>
 										</div>
 										<h4 class="entry-title">
-											<a href="blog-single-@@type.html" rel="bookmark">
-											Global Rubber Process Oil Market										</a>
+											<%= link_to news.title, post_path(news) %>
 										</h4>
 
 										<!-- .entry-meta -->
@@ -38,62 +41,11 @@
 								</div><!-- .item-content -->
 							</article>
 						</li>
-						<li class="media">
-							<article class="vertical-item  post type-post status-publish format-standard has-post-thumbnail">
-								<div class="item-content">
-									<div class="entry-header">
-										<div class="entry-meta">
-											<div class="byline">
-												<span class="date">
-													<a href="blog-@@type.html" rel="bookmark">
-														<time class="published entry-date" datetime="2019-04-09T12:23:09+00:00">25.07.2023</time>
-													</a>
-												</span>
-												<span class="author vcard">
-													<a class="url fn n" href="blog-@@type.html" rel="author"><span>by</span> Amir</a>
-												</span>
-											</div>
-										</div>
-										<h4 class="entry-title">
-											<a href="blog-single-@@type.html" rel="bookmark">
-											Weekly Bitumen Report											</a>
-										</h4>
+						<% end %>
 
-										<!-- .entry-meta -->
-									</div>
-									<!-- .entry-header -->
-								</div><!-- .item-content -->
-							</article>
-						</li>
-						<li class="media">
-							<article class="vertical-item  post type-post status-publish format-standard has-post-thumbnail">
-								<div class="item-content">
-									<div class="entry-header">
-										<div class="entry-meta">
-											<div class="byline">
-												<span class="date">
-													<a href="blog-@@type.html" rel="bookmark">
-														<time class="published entry-date" datetime="2019-04-09T12:23:09+00:00">24.07.2023</time>
-													</a>
-												</span>
-												<span class="author vcard">
-													<a class="url fn n" href="blog-@@type.html" rel="author"><span>by</span> Amir</a>
-												</span>
-											</div>
-										</div>
-										<h4 class="entry-title">
-											<a href="blog-single-@@type.html" rel="bookmark">
-											Oil markets will face ‘serious problems’ as demand from China and India ramps up										</a>
-										</h4>
-
-										<!-- .entry-meta -->
-									</div>
-									<!-- .entry-header -->
-								</div><!-- .item-content -->
-							</article>
-						</li>
 
 					</ul>
+					<% end %>
 				</div>
 				<div class="widget widget_about">
 					<h3 class="widget-title">About</h3>
