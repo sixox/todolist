@@ -27357,7 +27357,7 @@ a.logo img {
 
 @media (max-width: 1200px) {
 	a.logo img {
-		max-height: 50px;
+		/*max-height: 50px;*/
 		width: 45px;
 	}
 }
