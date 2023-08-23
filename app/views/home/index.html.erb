@@ -40,12 +40,12 @@
 					<% product.grades.each do |grade|%>
 					<div class="col-xl-4 col-md-6 <%= product.name.parameterize %> ">
 						<div class="icon-box service-single with-icon rounded  ls big-padding text-center" style="padding: 38px 60px !important;">
-							<%= link_to grade_path(grade), class: "mt-0 #{grade.name.parameterize}", turbo: false do %>
+							<%= link_to grade_path(grade), class: "mt-0 #{grade.name.parameterize}", data: { turbo: false } do %>
 							<h5 class="mt-0 text-info">
 								<%= grade.name %>
 							</h5>
 							<% end %>
-							<%= link_to product_path(product), class: "mt-0 #{grade.name.parameterize}", turbo: false do %>
+							<%= link_to product_path(product), class: "mt-0 #{grade.name.parameterize}", data: { turbo: false } do %>
 							<h6 class="">
 								<%= product.name.titleize %>
 							</h6>
@@ -59,12 +59,12 @@
 							<ul class="text-left">
 								<% product.packings.each do |packing| %>
 								<li class="text-secondary">
-									<%= link_to packing_path(packing), class: "text-secondary", turbo: false do %>
+									<%= link_to packing_path(packing), class: "text-secondary", data: { turbo: false } do %>
 									<%= packing.name.titleize %>
 									<% end %>								</li>
 									<% end %>
 								</ul>
-								<%= link_to "read more", grade_path(grade), class: "btn btn-outline-maincolor text-secondary mt-o", turbo: false %>
+								<%= link_to "read more", grade_path(grade), class: "btn btn-outline-maincolor text-secondary mt-o"%>
 							</div>
 						</div>
 						<% end %>
