@@ -57,4 +57,5 @@
 }
 .articlehome .vertical-item {
     /*background-color: lightgrey;*/
+    border: 2px solid #00000008 !important;
 }

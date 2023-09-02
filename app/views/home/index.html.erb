@@ -111,7 +111,7 @@
 						<div class="row isotope-wrapper portfolio masonry-layout c-mb-30">
 							<% @latest_articles.take(4).each do |article|%>
 							<div class="col-xl-6 col-md-6">
-								<div class="vertical-item text-center content-padding bordered rounded overflow-hidden">
+								<div class="vertical-item text-center content-padding rounded overflow-hidden">
 									<div class="item-media">
 										<% if article.image.attached? %>
 										<%= image_tag article.image, class: 'rounded' %>
@@ -192,6 +192,43 @@
 								</div>
 								<!-- .owl-carousel -->
 
+							</div>
+														<div class="widget widget_tag_cloud">
+
+								<h3 class="widget-title">Tags</h3>
+
+								<div class="tagcloud">
+
+									<a href="#" class="tag-cloud-link">
+										Bitumen
+									</a>
+
+									<a href="#" class="tag-cloud-link">
+										RPO
+									</a>
+
+									<a href="#" class="tag-cloud-link">
+										Products
+									</a>
+
+									<a href="#" class="tag-cloud-link">
+										Market
+									</a>
+
+									<a href="#" class="tag-cloud-link">
+										Price
+									</a>
+									<a href="#" class="tag-cloud-link">
+										Applications
+									</a>
+									<a href="#" class="tag-cloud-link">
+										Packings
+									</a>
+									<a href="#" class="tag-cloud-link">
+										Oil products
+									</a>
+
+								</div>
 							</div>
 
 
