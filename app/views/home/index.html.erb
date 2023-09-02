@@ -90,7 +90,7 @@
 
 
 	<section class="articlehome ls s-pt-xl-160 s-pt-lg-130 s-pt-md-90 s-pt-60 s-pb-xl-280 s-pb-lg-250 s-pb-md-90 s-pb-60 c-gutter-60 c-mb-30">
-		<div class="container">
+		<div class="container pb-1">
 
 			<div class="row">
 				<main class="col-lg-7 col-xl-8">
@@ -116,9 +116,7 @@
 										<% if article.image.attached? %>
 										<%= image_tag article.image, class: 'rounded' %>
 										<% end %>
-										<div class="media-links">
-											<a class="abs-link" title="" href="gallery-single.html"></a>
-										</div>
+										
 									</div>
 									<div class="item-content">
 										<h6>
@@ -128,7 +126,8 @@
 										</h6>
 
 										<p>
-											<%= truncate_html(article.content.body.to_html, length: 150) %>									</p>
+											<%= truncate_html(article.content.body.to_html, length: 150) %>	<%= link_to "Read more", post_path(article), data: { turbo: false } %>
+										</p>
 
 										</div>
 									</div>
@@ -149,13 +148,13 @@
 							<h3 class="widget-title">Recent Entries</h3>
 
 							<ul>
-								<% @latest_articles.drop(4).take(7).each do |article| %>
+								<% @latest_articles.drop(4).take(6).each do |article| %>
 								<li>
 									<%= link_to article.title, post_path(article), data: { turbo: false } %>
 									<br>
 									<span>
 										<i class="far fa-calendar-alt"></i>
-										<%= link_to article.created_at.strftime("%d %b %y"), post_path(article), data: { turbo: false }  %>									</span>	
+										<%= link_to article.created_at.strftime("%d %b %y"), post_path(article), data: { turbo: false, class: "text-danger" }  %>									</span>	
 									</li>
 									<% end %>
 								</ul>
@@ -197,7 +196,7 @@
 
 								<h3 class="widget-title">Tags</h3>
 
-								<div class="tagcloud">
+								<div class="tagcloud text-center">
 
 									<a href="#" class="tag-cloud-link">
 										Bitumen

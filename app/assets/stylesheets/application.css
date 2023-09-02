@@ -62,3 +62,6 @@
 .articlehome .owl-stage-outer {
     margin-bottom: -44px !important;
 }
+.articlehome .owl-stage-outer img {
+    max-height: 246px !important;
+}

@@ -6,21 +6,21 @@
 				<div class="fw-divider-space divider-xl-160 divider-lg-130 divider-md-90 divider-60"></div>
 				
 
-					<%= link_to root_path, class: "logo", data: { turbo: false }  do %>
-					<!-- <a href="https://globalsynergy-co.org" class="logo"> -->
-						<span class="d-flex flex-column">
-							<!-- <span class="logo-text color-darkgrey">Global</span> -->
+				<%= link_to root_path, class: "logo", data: { turbo: false }  do %>
+				<!-- <a href="https://globalsynergy-co.org" class="logo"> -->
+					<span class="d-flex flex-column">
+						<!-- <span class="logo-text color-darkgrey">Global</span> -->
 						<%= image_tag 'logo.png', class: "logo-footer" %>
 
-							<!-- <span class="logo-text color-darkgrey">Synergy</span> -->
-							<!-- <span class="logo-subtext">Synergy</span> -->
-						</span>
-					</a>
-					<% end %>
+						<!-- <span class="logo-text color-darkgrey">Synergy</span> -->
+						<!-- <span class="logo-subtext">Synergy</span> -->
+					</span>
+				</a>
+				<% end %>
 
 
 				<p class="text-justify">
-Global Synergy: Leading oil derivatives exporter delivering premium products worldwide with unmatched service, forging lasting partnerships.</p>
+				Global Synergy: Leading oil derivatives exporter delivering premium products worldwide with unmatched service, forging lasting partnerships.</p>
 				<a href="https://www.facebook.com/settings?tab=profile&section=username" class="fab fa-facebook-f rounded-icon bg-icon fs-16" title="facebook"></a>
 				<a href="#" class="fab fa-twitter rounded-icon bg-icon fs-16" title="telegram"></a>
 				<a href="https://www.linkedin.com/company/global-synergy-commercial-brokers/" class="fab fa-linkedin-in rounded-icon bg-icon fs-16" title="linkedin"></a>
@@ -30,10 +30,10 @@ Global Synergy: Leading oil derivatives exporter delivering premium products wor
 
 			<div class="col-lg-4 col-md-12 ls order-3 order-lg-2 footer-special-column text-center animate" data-animation="fadeInUp">
 				<div class="form-wrapper">
-<%= form_with(model: contact_for_form, url: contacts_path, method: :post, class: "contact-form") do |form| %>
-  <% if notice %>
-  <div class="alert alert-success"><%= notice %></div>
-  <% end %>
+					<%= form_with(model: contact_for_form, url: contacts_path, method: :post, class: "contact-form") do |form| %>
+					<% if notice %>
+					<div class="alert alert-success"><%= notice %></div>
+					<% end %>
 
 
 					<div class="row c-mb-20">
@@ -67,14 +67,14 @@ Global Synergy: Leading oil derivatives exporter delivering premium products wor
 							</div>
 						</div>
 					</div>
-										<div class="row c-mb-10 c-gutter-10">
+					<div class="row c-mb-10 c-gutter-10">
 						<div class="col-sm-12 text-center mt-2">
 							<div class="form-group has-placeholder">
-<%= recaptcha_tags %>
+								<%= recaptcha_tags %>
 							</div>
 						</div>
 					</div>
-											
+
 
 					<div class="row c-mb-10 c-gutter-10">
 						<div class="col-sm-12 mb-0 mt-50">
@@ -94,11 +94,21 @@ Global Synergy: Leading oil derivatives exporter delivering premium products wor
 				<div class="fw-divider-space divider-xl-160 divider-lg-130 divider-md-90"></div>
 				<div class="widget widget_icons_list">
 					<ul>
-						<li class="icon-inline ">
-							<div class="icon-styled icon-top  bordered round fs-16">
+						<li class="icon-inline">
+							<div class="icon-styled icon-top bordered round  fs-16">
 								<i class="fas fa-phone"></i>
 							</div>
-							<p>+971 589 27 8033</p>
+							<p>
+								Sales: +971 505 12 8033 <br>
+								Marketing: +971 589 27 8033
+							</p>
+						</li>
+						<li class="icon-inline ">
+							<div class="icon-styled icon-top bordered round  fs-16">
+
+								<i class="fab fa-whatsapp fa-lg"></i>
+							</div>
+							<p>+971 505 12 8033 </p>
 						</li>
 						<li class="icon-inline">
 							<div class="icon-styled icon-top bordered round  fs-16">
@@ -116,9 +126,6 @@ Global Synergy: Leading oil derivatives exporter delivering premium products wor
 								305, Centurion Star Tower, Block B<br>
 								Port Saeed, Deira, Dubai, UAE
 							</p>
-
-
-							
 						</li>
 						<li class="icon-inline">
 							<div class="icon-styled icon-top bordered round  fs-16">
