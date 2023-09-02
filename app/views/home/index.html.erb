@@ -89,221 +89,270 @@
 
 
 
-	<section class="ls ms text-center tax-fw-portfolio-category s-pt-xl-160 s-pt-lg-130 s-pt-md-90 s-pt-60 s-pb-xl-28 s-pb-lg-25 s-pb-md-9 s-pb-6">
+	<section class="articlehome ls s-pt-xl-160 s-pt-lg-130 s-pt-md-90 s-pt-60 s-pb-xl-280 s-pb-lg-250 s-pb-md-90 s-pb-60 c-gutter-60 c-mb-30">
 		<div class="container">
 
 			<div class="row">
-						<h2 class="special-heading text-center">
-							<span class="text-capitalize">
-								Latest Articles
-							</span>
-						</h2>
-						<p class="special-heading text-center">
-							<span class="text-capitalize color-darkgrey bold">
-								our blog
-							</span>
-						</p>
-						<div class="divider-50 hidden-below-lg"></div>
-						<div class="divider-30 hidden-above-lg"></div>
-				<div class="col-lg-12">
-
-					<div class="row isotope-wrapper portfolio masonry-layout c-mb-30">
-						<% @latest_articles.each do |article|%>
-						<div class="col-xl-4 col-md-6">
-							<div class="vertical-item text-center content-padding bordered rounded overflow-hidden">
-								<div class="item-media">
-									<% if article.image.attached? %>
-									<%= image_tag article.image, class: 'rounded' %>
-									<% end %>
-									<div class="media-links">
-										<a class="abs-link" title="" href="gallery-single.html"></a>
-									</div>
-								</div>
-								<div class="item-content">
-									<h6>
-										
-										<%= link_to article.title, post_path(article), data: { turbo: false } %>
-
-									</h6>
-
-									<p>
-										<%= truncate_html(article.content.body.to_html, length: 150) %>									</p>
-
-									</div>
-								</div>
-
-							</div>
-							<% end %>
-
-
-						</div>
-						<!-- .isotope-wrapper-->
-					</div>
-				</div>
-				<div class="mt--30"></div>
-				<div class="row">
+				<main class="col-lg-7 col-xl-8">
+					<h2 class="special-heading text-center">
+						<span class="text-capitalize">
+							Latest Articles
+						</span>
+					</h2>
+					<p class="special-heading text-center">
+						<span class="text-capitalize color-darkgrey bold">
+							our blog
+						</span>
+					</p>
+					<div class="divider-50 hidden-below-lg"></div>
+					<div class="divider-30 hidden-above-lg"></div>
 					<div class="col-lg-12">
-						<div class="divider-60"></div>
-						<a class="btn btn-outline-maincolor2 big-btn" href="#">See All Articles</a>
-					</div>
-				</div>
-			</div>
-		</section>
 
-
-
-
-
-		<section class="ls ms s-pt-xl-160 s-pt-lg-130 s-pt-md-90 s-pt-60 s-pb-xl-280 s-pb-lg-250 s-pb-md-90 s-pb-60">
-			<div class="container">
-				<div class="row">
-					<div class="col-12">
-						<h2 class="special-heading text-center">
-							<span class="text-capitalize">
-								Latest News
-							</span>
-						</h2>
-						<p class="special-heading text-center">
-							<span class="text-capitalize color-darkgrey bold">
-								our blog
-							</span>
-						</p>
-						<div class="divider-50 hidden-below-lg"></div>
-						<div class="divider-30 hidden-above-lg"></div>
-						<% if @latest_news[2] %>
-						<div class="shortcode-posts row tiled-layout c-gutter-30 c-mb-30">
-
-							<div class="bigitem col-xl-6 col-lg-5">
-								<article class="vertical-item ls rounded post type-post status-publish format-standard has-post-thumbnail">
-									<div class="item-media post-thumbnail">
-
-										<a href="<%= post_path(@latest_news.first) %>" data-turbo="false">
-											<%= image_tag @latest_news.first.image %>
-										</a>
-
-									</div><!-- .post-thumbnail -->
+						<div class="row isotope-wrapper portfolio masonry-layout c-mb-30">
+							<% @latest_articles.take(4).each do |article|%>
+							<div class="col-xl-6 col-md-6">
+								<div class="vertical-item text-center content-padding bordered rounded overflow-hidden">
+									<div class="item-media">
+										<% if article.image.attached? %>
+										<%= image_tag article.image, class: 'rounded' %>
+										<% end %>
+										<div class="media-links">
+											<a class="abs-link" title="" href="gallery-single.html"></a>
+										</div>
+									</div>
 									<div class="item-content">
-										<header class="entry-header">
-											<div class="entry-meta">
-												<div class="byline">
-													<span class="date">
-														<a href="#" rel="bookmark">
-															<time class="published entry-date">
-																<%= @latest_news.first.created_at.strftime('%d.%m.%Y') %>
-															</time>
-														</a>
-													</span>
-													<span class="author vcard">
-														<a class="url fn n" href="#" rel="author"><span>by</span> Amir</a>
-													</span>
-												</div>
-											</div>
-											<h4 class="entry-title">
-												<a href="<%= post_path(@latest_news.first) %>" data-turbo="false" rel="bookmark">
-													<%= @latest_news.first.title %>
-												</a>
-											</h4>
+										<h6>
 
-											<!-- .entry-meta -->
-										</header>
-										<!-- .entry-header -->
+											<%= link_to article.title, post_path(article), data: { turbo: false } %>
 
-										<div class="entry-content">
-											<p>
-												<%= truncate_html(@latest_news.first.content.body.to_html, length: 300) %>
-											</p>
-										</div><!-- .entry-content -->
-									</div><!-- .item-content -->
-								</article><!-- #post-## -->
-							</div>
+										</h6>
 
+										<p>
+											<%= truncate_html(article.content.body.to_html, length: 150) %>									</p>
 
-							<div class=" smallitem col-xl-6 col-lg-7">
-								<article class="vertical-item side-item ls rounded post type-post status-publish format-standard has-post-thumbnail">
-									<div class="item-media post-thumbnail">
-										<a href="<%= post_path(@latest_news[1]) %>" data-turbo="false">
-											<%= image_tag @latest_news[1].image %>
-										</a>
-									</div><!-- .post-thumbnail -->
-									<div class="item-content">
-										<header class="entry-header">
-											<div class="entry-meta">
-												<div class="byline">
-													<span class="date">
-														<a href="#" rel="bookmark">
-															<time class="published entry-date">
-																<%= @latest_news[1].created_at.strftime('%d.%m.%Y') %>
-															</time>
-														</a>
-													</span>
-													<span class="author vcard">
-														<a class="url fn n" href="#" rel="author"><span>by</span> Amir</a>
-													</span>
-												</div>
-											</div>
-											<h4 class="entry-title">
-												<a href="<%= post_path(@latest_news[1]) %>" data-turbo="false" rel="bookmark">
-													<%= @latest_news[1].title %>
-												</a>
-											</h4>
+										</div>
+									</div>
 
-											<!-- .entry-meta -->
-										</header>
-										<!-- .entry-header -->
-
-										<div class="entry-content">
-											<p>
-												<%= truncate_html(@latest_news[1].content.body.to_html, length: 85) %>
-											</p>
-										</div><!-- .entry-content -->
-									</div><!-- .item-content -->
-								</article>
-								<article class="vertical-item side-item ls rounded post type-post status-publish format-standard has-post-thumbnail">
-									<div class="item-media post-thumbnail">
-										<a href="<%= post_path(@latest_news[2]) %>" data-turbo="false">
-											<%= image_tag @latest_news[2].image %>
-										</a>
-									</div><!-- .post-thumbnail -->
-									<div class="item-content">
-										<header class="entry-header">
-											<div class="entry-meta">
-												<div class="byline">
-													<span class="date">
-														<a href="#" rel="bookmark">
-															<time class="published entry-date">
-																<%= @latest_news[2].created_at.strftime('%d.%m.%Y') %>												</time>
-															</a>
-														</span>
-														<span class="author vcard">
-															<a class="url fn n" href="#" rel="author"><span>by</span> Amir</a>
-														</span>
-													</div>
-												</div>
-												<h4 class="entry-title">
-													<a href="<%= post_path(@latest_news[2]) %>" data-turbo="false" rel="bookmark">
-														<%= @latest_news[2].title %>
-													</a>
-												</h4>
-
-												<!-- .entry-meta -->
-											</header>
-											<!-- .entry-header -->
-
-											<div class="entry-content">
-												<p>
-													<%= truncate_html(@latest_news[2].content.body.to_html, length: 120) %>
-												</p>
-											</div><!-- .entry-content -->
-										</div><!-- .item-content -->
-									</article>
 								</div>
+								<% end %>
+
 
 							</div>
-							<% end %>
-							<div class="mt--30"></div>
+							<!-- .isotope-wrapper-->
 						</div>
+
+					</main>
+
+					<aside class="col-lg-5 col-xl-4">
+						<div class="widget widget_slider">
+
+							<h3 class="widget-title">Applications</h3>
+
+							<div class="owl-carousel" data-nav="true" data-loop="true" data-autoplay="true" data-items="1" data-responsive-lg="1" data-responsive-md="1" data-responsive-sm="1" data-responsive-xs="1">
+
+								<% @application_posts.each do |application| %>
+								<div class="vertical-item">
+									<div class="item-media">
+										<% if application.image.attached? %>
+										<%= image_tag application.image %>
+										<% end %>						
+									</div>
+									<div class="item-content">
+										<h4>
+											<%= link_to application.title, post_path(application), data: { turbo: false } %>
+
+										</h4>
+										<p class="item-meta">
+											<i class="far fa-calendar-alt"></i>
+											<%= link_to application.created_at.strftime("%d %b %y"), post_path(application), data: { turbo: false }  %>
+
+										</p>
+
+									</div>
+								</div>
+								<!-- .vertical-item -->
+								<% end %>
+
+							</div>
+							<!-- .owl-carousel -->
+
+						</div>
+
+						<div class="widget widget_recent_entries">
+
+							<h3 class="widget-title">Recent Entries</h3>
+
+							<ul>
+								<% @latest_articles.take(8).each do |article| %>
+								<li>
+									<%= link_to article.title, post_path(article), data: { turbo: false } %>
+									<br>
+									<span>
+										<i class="far fa-calendar-alt"></i>
+										<%= link_to article.created_at.strftime("%d %b %y"), post_path(article), data: { turbo: false }  %>									</span>	
+									</li>
+									<% end %>
+								</ul>
+							</div>
+
+						</aside>
 					</div>
-				</div>
-			</section>
+				</section>
+
+
+
+
+
+				<section class="ls ms s-pt-xl-160 s-pt-lg-130 s-pt-md-90 s-pt-60 s-pb-xl-280 s-pb-lg-250 s-pb-md-90 s-pb-60">
+					<div class="container">
+						<div class="row">
+							<div class="col-12">
+								<h2 class="special-heading text-center">
+									<span class="text-capitalize">
+										Latest News
+									</span>
+								</h2>
+								<p class="special-heading text-center">
+									<span class="text-capitalize color-darkgrey bold">
+										our blog
+									</span>
+								</p>
+								<div class="divider-50 hidden-below-lg"></div>
+								<div class="divider-30 hidden-above-lg"></div>
+								<% if @latest_news[2] %>
+								<div class="shortcode-posts row tiled-layout c-gutter-30 c-mb-30">
+
+									<div class="bigitem col-xl-6 col-lg-5">
+										<article class="vertical-item ls rounded post type-post status-publish format-standard has-post-thumbnail">
+											<div class="item-media post-thumbnail">
+
+												<a href="<%= post_path(@latest_news.first) %>" data-turbo="false">
+													<%= image_tag @latest_news.first.image %>
+												</a>
+
+											</div><!-- .post-thumbnail -->
+											<div class="item-content">
+												<header class="entry-header">
+													<div class="entry-meta">
+														<div class="byline">
+															<span class="date">
+																<a href="#" rel="bookmark">
+																	<time class="published entry-date">
+																		<%= @latest_news.first.created_at.strftime('%d.%m.%Y') %>
+																	</time>
+																</a>
+															</span>
+															<span class="author vcard">
+																<a class="url fn n" href="#" rel="author"><span>by</span> Amir</a>
+															</span>
+														</div>
+													</div>
+													<h4 class="entry-title">
+														<a href="<%= post_path(@latest_news.first) %>" data-turbo="false" rel="bookmark">
+															<%= @latest_news.first.title %>
+														</a>
+													</h4>
+
+													<!-- .entry-meta -->
+												</header>
+												<!-- .entry-header -->
+
+												<div class="entry-content">
+													<p>
+														<%= truncate_html(@latest_news.first.content.body.to_html, length: 300) %>
+													</p>
+												</div><!-- .entry-content -->
+											</div><!-- .item-content -->
+										</article><!-- #post-## -->
+									</div>
+
+
+									<div class=" smallitem col-xl-6 col-lg-7">
+										<article class="vertical-item side-item ls rounded post type-post status-publish format-standard has-post-thumbnail">
+											<div class="item-media post-thumbnail">
+												<a href="<%= post_path(@latest_news[1]) %>" data-turbo="false">
+													<%= image_tag @latest_news[1].image %>
+												</a>
+											</div><!-- .post-thumbnail -->
+											<div class="item-content">
+												<header class="entry-header">
+													<div class="entry-meta">
+														<div class="byline">
+															<span class="date">
+																<a href="#" rel="bookmark">
+																	<time class="published entry-date">
+																		<%= @latest_news[1].created_at.strftime('%d.%m.%Y') %>
+																	</time>
+																</a>
+															</span>
+															<span class="author vcard">
+																<a class="url fn n" href="#" rel="author"><span>by</span> Amir</a>
+															</span>
+														</div>
+													</div>
+													<h4 class="entry-title">
+														<a href="<%= post_path(@latest_news[1]) %>" data-turbo="false" rel="bookmark">
+															<%= @latest_news[1].title %>
+														</a>
+													</h4>
+
+													<!-- .entry-meta -->
+												</header>
+												<!-- .entry-header -->
+
+												<div class="entry-content">
+													<p>
+														<%= truncate_html(@latest_news[1].content.body.to_html, length: 85) %>
+													</p>
+												</div><!-- .entry-content -->
+											</div><!-- .item-content -->
+										</article>
+										<article class="vertical-item side-item ls rounded post type-post status-publish format-standard has-post-thumbnail">
+											<div class="item-media post-thumbnail">
+												<a href="<%= post_path(@latest_news[2]) %>" data-turbo="false">
+													<%= image_tag @latest_news[2].image %>
+												</a>
+											</div><!-- .post-thumbnail -->
+											<div class="item-content">
+												<header class="entry-header">
+													<div class="entry-meta">
+														<div class="byline">
+															<span class="date">
+																<a href="#" rel="bookmark">
+																	<time class="published entry-date">
+																		<%= @latest_news[2].created_at.strftime('%d.%m.%Y') %>												</time>
+																	</a>
+																</span>
+																<span class="author vcard">
+																	<a class="url fn n" href="#" rel="author"><span>by</span> Amir</a>
+																</span>
+															</div>
+														</div>
+														<h4 class="entry-title">
+															<a href="<%= post_path(@latest_news[2]) %>" data-turbo="false" rel="bookmark">
+																<%= @latest_news[2].title %>
+															</a>
+														</h4>
+
+														<!-- .entry-meta -->
+													</header>
+													<!-- .entry-header -->
+
+													<div class="entry-content">
+														<p>
+															<%= truncate_html(@latest_news[2].content.body.to_html, length: 120) %>
+														</p>
+													</div><!-- .entry-content -->
+												</div><!-- .item-content -->
+											</article>
+										</div>
+
+									</div>
+									<% end %>
+									<div class="mt--30"></div>
+								</div>
+							</div>
+						</div>
+					</section>
 
 

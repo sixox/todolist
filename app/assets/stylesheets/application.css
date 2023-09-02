@@ -49,3 +49,15 @@
 .articlecard {
     background-color: #efeacf !important;
 }
+.articlehome {
+    background-image: linear-gradient(90deg, rgb(203 217 201) 0%, rgb(131 157 134) 35%, rgb(175 183 175) 100%);
+}
+.articlehome p {
+    color: #3f3109;
+}
+.articlehome .vertical-item {
+    /*background-color: lightgrey;*/
+}
+.articlehome .owl-carousel {
+    margin-top: 88px !important;
+}
