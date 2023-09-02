@@ -149,7 +149,7 @@
 							<h3 class="widget-title">Recent Entries</h3>
 
 							<ul>
-								<% @latest_articles.take(7).each do |article| %>
+								<% @latest_articles.drop(4).take(7).each do |article| %>
 								<li>
 									<%= link_to article.title, post_path(article), data: { turbo: false } %>
 									<br>
