@@ -40,9 +40,9 @@
 
 				<div class="row isotope-wrapper masonry-layout c-gutter-30 c-mb-30">
 					<% @products.each do |product|%>
-					<% product.grades.each do |grade|%>
+					<% product.grades.take(3).each do |grade|%>
 					<div class="col-xl-4 col-md-6 <%= product.name.parameterize %> ">
-						<div class="icon-box service-single with-icon rounded  ls big-padding text-center" style="padding: 38px 60px !important;">
+						<div class="icon-box service-single ls with-icon rounded big-padding text-center articlecard" style="padding: 38px 60px !important;">
 							<%= link_to grade_path(grade), class: "mt-0 #{grade.name.parameterize}", data: { turbo: false } do %>
 							<h5 class="mt-0 text-info">
 								<%= grade.name %>
@@ -67,7 +67,7 @@
 									<% end %>								</li>
 									<% end %>
 								</ul>
-								<%= link_to "read more", grade_path(grade), class: "btn btn-outline-maincolor text-secondary mt-o"%>
+								<%= link_to "read more", grade_path(grade), class: "btn btn-outline-maincolor text-secondary mt-0"%>
 							</div>
 						</div>
 						<% end %>

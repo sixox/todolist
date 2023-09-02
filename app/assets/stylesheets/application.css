@@ -46,3 +46,6 @@
     transform-origin:0 0;
     -webkit-transform-origin:0 0;
 }
+.articlecard {
+    background-color: #efeacf !important;
+}
