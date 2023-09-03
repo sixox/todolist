@@ -100,9 +100,9 @@
           At Global Synergy, we proudly offer a comprehensive range of Semi-Refined Paraffin Wax products, each meticulously crafted to meet the diverse needs of various industries. Our high-quality wax is known for its versatility and ability to enhance the performance and quality of countless applications.          </p>
           <div class="divider-45 hidden-below-lg"></div>
           <div class="divider-30 hidden-above-lg"></div>
-          <% if @products[5] %>
+          <% if @products[4] %>
           <ul class="list-styled">
-          <% @products[5].grades.each do |paraffin| %>
+          <% @products[4].grades.each do |paraffin| %>
           <li><%= link_to paraffin.name, grade_path(paraffin), data: { turbo: false } %></li>
           <% end %>
         </ul>
