@@ -102,14 +102,14 @@
           <div class="divider-30 hidden-above-lg"></div>
           <% if @products[4] %>
           <ul class="list-styled">
-          <% @products[4].grades.each do |paraffin| %>
-          <li><%= link_to paraffin.name, grade_path(paraffin), data: { turbo: false } %></li>
+            <% @products[4].grades.each do |paraffin| %>
+            <li><%= link_to paraffin.name, grade_path(paraffin), data: { turbo: false } %></li>
+            <% end %>
+          </ul>
           <% end %>
-        </ul>
-        <% end %>
-        <div class="divider-45 hidden-below-lg"></div>
-        <div class="divider-30 hidden-above-lg"></div>
-        <span><%= link_to "Explore the Common Packaging Types for Bitumen", packings_path, data: { turbo: false }%></span>
+          <div class="divider-45 hidden-below-lg"></div>
+          <div class="divider-30 hidden-above-lg"></div>
+          <span><%= link_to "Explore the Common Packaging Types for Bitumen", packings_path, data: { turbo: false }%></span>
         </div>
       </div>
     </div>
@@ -130,138 +130,51 @@
         <div class="row justify-content-center">
           <div class="col-md-10 col-xl-8">
             <div class="filters gallery-filters">
-              <a href="#" data-filter="*" class="active selected">show All</a>
-              <a href="#" data-filter=".corporate">Gas</a>
-              <a href="#" data-filter=".business">oil</a>
-              <a href="#" data-filter=".entertainment">Industry</a>
-              <a href="#" data-filter=".innovations">eco</a>
-              <a href="#" data-filter=".news">Factory</a>
-
+              <a href="#" data-filter="*" class="active selected">All</a>
+              <% @products.each do |product|%> 
+              <a href="#" data-filter=".<%= product.name.parameterize%>"><%= product.name%></a>
+              <% end %>
             </div>
           </div>
         </div>
         <div class="row isotope-wrapper portfolio masonry-layout c-mb-30" data-filters=".gallery-filters">
 
-          <div class="col-xl-4 col-sm-6 business news">
+          <% @products.each do |product|%>
+          <% product.grades.take(3).each do |grade|%>
+          <div class="col-xl-4 col-sm-6 <%= product.name.parameterize %>">
+            <div class="card text-center">
+              <div class="card-header text-secondary"><%= product.name.titleize%></div>
+              <div class="card-body">
+                <%= link_to grade_path(grade), data: { turbo: false } do %>
+                <h5 class="card-title text-secondary">
+                  <span class="text-info"><u><%= grade.name %></u></span>
+                </h5>
+                <% end %>
+                <p class="card-text text-dark mt-4">
+                  <%= truncate(grade.description, length: 100) %>
+                  <%= link_to " Read more", grade_path(grade), class: "post-link text-secondary", data: { turbo: false } %>
+                  <br>
+                  <br>
+                  <span>
+                    <i class="fas fa-table"></i>
+                    <strong class="text-dark">  Specification </strong>
 
-            <div class="vertical-item item-gallery content-absolute text-center ds">
-              <div class="item-media">
-                <img src="images/gallery/full/01.jpg" alt="img">
+                  </span>
+ | 
+                  <span>
+                    <i class="fas fa-box"></i>
+                    <strong class="text-dark">  Packings </strong>
 
-              </div>
-              <div class="item-content">
-                <div class="links-wrap">
-                  <a class="link-zoom photoswipe-link" title="" href="images/gallery/full/01.jpg"></a>
-                  <a class="link-anchor" title="" href="gallery-single.html"></a>
-                </div>
-                <h6>
-                  <a href="gallery-single.html">Lorem ipsum dolor sit</a>
-                </h6>
+                  </span>
 
-              </div>
-            </div>
 
-          </div>
-
-          <div class="col-xl-4 col-sm-6 innovations corporate">
-            <div class="vertical-item item-gallery content-absolute text-center ds">
-              <div class="item-media">
-                <img src="images/gallery/full/02.jpg" alt="img">
-              </div>
-              <div class="item-content ">
-                <div class="links-wrap">
-                  <a class="link-zoom photoswipe-link" title="" href="images/gallery/full/02.jpg"></a>
-                  <a class="link-anchor" title="" href="gallery-single.html"></a>
-                </div>
-                <h6>
-                  <a href="gallery-single.html">Amet consetetur sadipscing</a>
-                </h6>
+                </p>
               </div>
             </div>
+            
           </div>
-
-          <div class="col-xl-4 col-sm-6 entertainment news innovations">
-            <div class="vertical-item item-gallery content-absolute text-center ds">
-              <div class="item-media">
-                <img src="images/gallery/full/03.jpg" alt="img">
-
-              </div>
-              <div class="item-content ">
-                <div class="links-wrap">
-                  <a class="link-zoom photoswipe-link" title="" href="images/gallery/full/03.jpg"></a>
-                  <a class="link-anchor" title="" href="gallery-single.html"></a>
-                </div>
-
-                <h6>
-                  <a href="gallery-single.html">Elitr sed diam nonumy</a>
-                </h6>
-
-
-              </div>
-            </div>
-          </div>
-
-          <div class="col-xl-4 col-sm-6 business entertainment">
-            <div class="vertical-item item-gallery content-absolute text-center ds">
-              <div class="item-media">
-                <img src="images/gallery/full/04.jpg" alt="img">
-
-              </div>
-              <div class="item-content ">
-                <div class="links-wrap">
-                  <a class="link-zoom photoswipe-link" title="" href="images/gallery/full/04.jpg"></a>
-                  <a class="link-anchor" title="" href="gallery-single.html"></a>
-                </div>
-
-                <h6>
-                  <a href="gallery-single.html">Tempor invidunt ut</a>
-                </h6>
-
-
-              </div>
-            </div>
-          </div>
-
-          <div class="col-xl-4 col-sm-6 innovations corporate">
-            <div class="vertical-item item-gallery content-absolute text-center ds">
-              <div class="item-media">
-                <img src="images/gallery/full/05.jpg" alt="img">
-              </div>
-              <div class="item-content">
-                <div class="links-wrap">
-                  <a class="link-zoom photoswipe-link" title="" href="images/gallery/full/05.jpg"></a>
-                  <a class="link-anchor" title="" href="gallery-single.html"></a>
-                </div>
-
-                <h6>
-                  <a href="gallery-single.html">Labore et dolore magna</a>
-                </h6>
-
-
-              </div>
-            </div>
-          </div>
-
-          <div class="col-xl-4 col-sm-6 entertainment news corporate">
-            <div class="vertical-item item-gallery content-absolute text-center ds">
-              <div class="item-media">
-                <img src="images/gallery/full/06.jpg" alt="img">
-              </div>
-              <div class="item-content">
-                <div class="links-wrap">
-                  <a class="link-zoom photoswipe-link" title="" href="images/gallery/full/06.jpg"></a>
-                  <a class="link-anchor" title="" href="gallery-single.html"></a>
-                </div>
-
-                <h6>
-                  <a href="gallery-single.html">Aliquyam erat sed diam</a>
-                </h6>
-
-
-              </div>
-            </div>
-          </div>
-
+          <% end %>
+          <% end %>
 
         </div>
         <div class="mt--30"></div>
