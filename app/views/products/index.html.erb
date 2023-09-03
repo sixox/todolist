@@ -68,8 +68,8 @@
           <% end %>
         </ul>
         <div class="divider-45 hidden-below-lg"></div>
-         <div class="divider-30 hidden-above-lg"></div>
-          <span><%= link_to "Explore the Common Packaging Types for Bitumen", packings_path, data: { turbo: false }%></span>
+        <div class="divider-30 hidden-above-lg"></div>
+        <span><%= link_to "Explore the Common Packaging Types for Bitumen", packings_path, data: { turbo: false }%></span>
         <div class="divider--10"></div>
       </div>
     </div>
@@ -89,39 +89,28 @@
         <div class="content-center">
           <h2 class="special-heading numeric text-sm-left text-center">
             <span class="text-capitalize">
-              Saving Technologies
+              Paraffin Wax
             </span>
+
           </h2>
+          <h6 class="mt-0">Semi Refined</h6>
           <div class="divider-45 hidden-below-lg"></div>
           <div class="divider-30 hidden-above-lg"></div>
           <p>
-            Rem aperiam, eaque ipsa qillo inventore veritatis etquasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit sed quia consequuntur magni dolores eos.
-          </p>
+          At Global Synergy, we proudly offer a comprehensive range of Semi-Refined Paraffin Wax products, each meticulously crafted to meet the diverse needs of various industries. Our high-quality wax is known for its versatility and ability to enhance the performance and quality of countless applications.          </p>
           <div class="divider-45 hidden-below-lg"></div>
           <div class="divider-30 hidden-above-lg"></div>
-          <div class="shortcode-widget-area">
-            <div class="widget widget_mailchimp">
-              <p>
-                Subscribe to Our Newsletter:
-              </p>
-
-              <form class="signup" action="/">
-                <label for="mailchimp_email88">
-                  <span class="screen-reader-text">Subscribe:</span>
-                </label>
-                <input id="mailchimp_email88" name="email" type="email" class="form-control mailchimp_email has-placeholder" placeholder="Email">
-                <button type="submit" class="search-submit">
-                  <span class="screen-reader-text">Subscribe</span>
-                </button>
-                <div class="response"></div>
-              </form>
-            </div>
-          </div>
+          <% if @products[5] %>
+          <ul class="list-styled">
+          <% @products[5].grades.each do |paraffin| %>
+          <li><%= link_to paraffin.name, grade_path(paraffin), data: { turbo: false } %></li>
+          <% end %>
+        </ul>
+        <% end %>
+        <div class="divider-45 hidden-below-lg"></div>
+        <div class="divider-30 hidden-above-lg"></div>
+        <span><%= link_to "Explore the Common Packaging Types for Bitumen", packings_path, data: { turbo: false }%></span>
         </div>
-      </div>
-      <div class="col-xs-12 col-12 col-lg-6">
-
-
       </div>
     </div>
   </div>
