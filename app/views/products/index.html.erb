@@ -64,9 +64,12 @@
          <div class="divider-30 hidden-above-lg"></div>
          <ul class="list-styled">
           <% @products.take(4).each do |bitumen| %>
-          <li><%= link_to bitumen.name, product_path(bitumen) %></li>
+          <li><%= link_to bitumen.name, product_path(bitumen), data: { turbo: false } %></li>
           <% end %>
         </ul>
+        <div class="divider-45 hidden-below-lg"></div>
+         <div class="divider-30 hidden-above-lg"></div>
+          <span><%= link_to "Explore the Common Packaging Types for Bitumen", packings_path, data: { turbo: false }%></span>
         <div class="divider--10"></div>
       </div>
     </div>
