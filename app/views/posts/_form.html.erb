@@ -58,7 +58,7 @@
    <div>
     <h2>Associated metatags:</h2>
     <!-- Fields for the associated MetaTag -->
-  <%= form.fields_for :meta_tag do |meta_tag_fields| %>
+  <%= form.fields_for :seo_tag do |meta_tag_fields| %>
     <div class="form-group">
       <%= meta_tag_fields.label :title, 'Meta Tag Title' %>
       <%= meta_tag_fields.text_field :title, class: 'form-control' %>
