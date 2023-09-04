@@ -1,3 +1,7 @@
+<% content_for :title, @post.seo_tag.title if defined?(@post) && @post.seo_tag.present? %>
+<% content_for :description, @post.seo_tag.description if defined?(@post) && @post.seo_tag.present? %>
+<% content_for :keywords, @post.seo_tag.keywords if defined?(@post) && @post.seo_tag.present? %>
+
 <section class="ls ms text-sm-left text-center s-pt-xl-160 s-pt-lg-130 s-pt-md-90 s-pt-60 s-pb-xl-280 s-pb-lg-250 s-pb-md-90 s-pb-60 c-gutter-60">
   <div class="container">
     <div class="row">

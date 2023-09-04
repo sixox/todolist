@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <title><%= yield(:title) || "Default Title" %></title>
+  <meta name="description" content="<%= yield(:description) || "Default Description" %>">
+  <meta name="keywords" content="<%= yield(:keywords) || "Default Keywords" %>">
   <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-DKNERWM2W5"></script>
 <script>
