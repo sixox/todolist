@@ -21,7 +21,7 @@ class PostsController < ApplicationController
   # GET /posts/1/edit
   def edit
     @products = Product.all
-    @post.build_seo_tag if @post.meta_tag.nil?
+    @post.build_seo_tag if @post.seo_tag.nil?
 
   end
 
