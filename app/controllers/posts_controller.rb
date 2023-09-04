@@ -14,11 +14,15 @@ class PostsController < ApplicationController
   def new
     @post = Post.new
     @products = Product.all
+    @post.build_seo_tag
+
   end
 
   # GET /posts/1/edit
   def edit
     @products = Product.all
+    @post.build_seo_tag if @post.meta_tag.nil?
+
   end
 
   # POST /posts or /posts.json
@@ -67,6 +71,6 @@ class PostsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def post_params
-      params.require(:post).permit(:title, :content, :kind, :category, :tag, :image, product_ids: [])
+      params.require(:post).permit(:title, :content, :kind, :category, :tag, :image, product_ids: [], seo_tag_attributes: [:title, :description, :keywords])
     end
 end
