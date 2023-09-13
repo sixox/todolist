@@ -89,36 +89,36 @@
         <div class="content-center">
           <h2 class="special-heading numeric text-sm-left text-center">
             <span class="text-capitalize">
-               &nbsp; Paraffin Wax
-            </span>
-            <br>
-            <span class="h4 text-secondary">
-               &nbsp; &nbsp; Semi Refined
-            </span>
+             &nbsp; Paraffin Wax
+           </span>
+           <br>
+           <span class="h4 text-secondary">
+             &nbsp; &nbsp; Semi Refined
+           </span>
 
 
-          </h2>
-          <h6 class="mt-0"></h6>
-          <div class="divider-45 hidden-below-lg"></div>
-          <div class="divider-30 hidden-above-lg"></div>
-          <p>
-          At Global Synergy, we proudly offer a comprehensive range of Semi-Refined Paraffin Wax products, each meticulously crafted to meet the diverse needs of various industries. Our high-quality wax is known for its versatility and ability to enhance the performance and quality of countless applications.          </p>
-          <div class="divider-45 hidden-below-lg"></div>
-          <div class="divider-30 hidden-above-lg"></div>
-          <% if @products[4] %>
-          <ul class="list-styled">
-            <% @products[4].grades.each do |paraffin| %>
-            <li><%= link_to paraffin.name, grade_path(paraffin), data: { turbo: false } %></li>
-            <% end %>
-          </ul>
+         </h2>
+         <h6 class="mt-0"></h6>
+         <div class="divider-45 hidden-below-lg"></div>
+         <div class="divider-30 hidden-above-lg"></div>
+         <p>
+         At Global Synergy, we proudly offer a comprehensive range of Semi-Refined Paraffin Wax products, each meticulously crafted to meet the diverse needs of various industries. Our high-quality wax is known for its versatility and ability to enhance the performance and quality of countless applications.          </p>
+         <div class="divider-45 hidden-below-lg"></div>
+         <div class="divider-30 hidden-above-lg"></div>
+         <% if @products[4] %>
+         <ul class="list-styled">
+          <% @products[4].grades.each do |paraffin| %>
+          <li><%= link_to paraffin.name, grade_path(paraffin), data: { turbo: false } %></li>
           <% end %>
-          <div class="divider-45 hidden-below-lg"></div>
-          <div class="divider-30 hidden-above-lg"></div>
-          <span><%= link_to "Explore the Common Packaging Types for Paraffin Wax", packings_path, data: { turbo: false }%></span>
-        </div>
+        </ul>
+        <% end %>
+        <div class="divider-45 hidden-below-lg"></div>
+        <div class="divider-30 hidden-above-lg"></div>
+        <span><%= link_to "Explore the Common Packaging Types for Paraffin Wax", packings_path, data: { turbo: false }%></span>
       </div>
     </div>
   </div>
+</div>
 </section>
 <section class="ds s-overlay portfolio-section  s-py-xl-160 s-py-lg-130 s-py-md-90 s-py-60 text-center">
   <div class="container">
@@ -160,12 +160,19 @@
                   <%= link_to " Read more", grade_path(grade), class: "post-link text-secondary", data: { turbo: false } %>
                   <br>
                   <br>
-                  <span>
+
+                  <!-- <span>
                     <i class="fas fa-table"></i>
                     <strong class="text-dark">  Specification </strong>
 
+                  </span> -->
+                  <%= link_to grade_path(grade, anchor: 'specification1'), data: { turbo: false } do %>
+                  <span>
+                    <i class="fas fa-table text-dark"></i>
+                    <strong class="text-dark">Specification</strong>
                   </span>
- | 
+                  <% end %>
+                  | 
                   <span>
                     <i class="fas fa-box"></i>
                     <strong class="text-dark">  Packings </strong>
