@@ -30,7 +30,7 @@
 						<div class="filters gallery-filters">
 							<%if @products.first %>
 							<a class="selected active" href="#" data-filter=".<%= @products.first.name.parameterize%>"><%= @products.first.name%></a>
-							<% @products.each do |product|%> 
+							<% @products.drop(1).each do |product|%> 
 							<a href="#" data-filter=".<%= product.name.parameterize%>"><%= product.name%></a>
 							<% end %>
 							<% end %>
