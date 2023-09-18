@@ -1,4 +1,6 @@
-
+<% content_for :title, @grade.seo_tag.title if defined?(@grade) && @grade.seo_tag.present? %>
+<% content_for :description, @grade.seo_tag.description if defined?(@grade) && @grade.seo_tag.present? %>
+<% content_for :keywords, @grade.seo_tag.keywords if defined?(@grade) && @grade.seo_tag.present? %>
 
 <%= render "layouts/slide"%>
 
@@ -13,11 +15,11 @@
 
         <h3 id="specification1">
          <%= @grade.product.name.titleize %> <%= @grade.name.titleize %>
-        </h3>
-        <hr>
-<%= render @grade %>
+       </h3>
+       <hr>
+       <%= render @grade %>
 
-      </div>
-    </div>
-  </div>
+     </div>
+   </div>
+ </div>
 </section>

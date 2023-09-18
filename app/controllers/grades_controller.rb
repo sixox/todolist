@@ -13,10 +13,13 @@ class GradesController < ApplicationController
   # GET /grades/new
   def new
     @grade = Grade.new
+    @grade.build_seo_tag
+
   end
 
   # GET /grades/1/edit
   def edit
+    @grade.build_seo_tag if @grade.seo_tag.nil?
   end
 
   # POST /grades or /grades.json
@@ -65,6 +68,6 @@ class GradesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def grade_params
-      params.require(:grade).permit(:name, :description, :specification, :content, :product_id)
+      params.require(:grade).permit(:name, :description, :specification, :content, :product_id, seo_tag_attributes: [:title, :description, :keywords])
     end
 end
