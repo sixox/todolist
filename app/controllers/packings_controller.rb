@@ -14,11 +14,15 @@ class PackingsController < ApplicationController
   def new
     @packing = Packing.new
     @products = Product.all
+    @packing.build_seo_tag
+
   end
 
   # GET /packings/1/edit
   def edit
     @products = Product.all
+    @packing.build_seo_tag if @packing.seo_tag.nil?
+
 
   end
 
@@ -68,6 +72,6 @@ class PackingsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def packing_params
-      params.require(:packing).permit(:name, :description, :content, :specification, product_ids: [])
+      params.require(:packing).permit(:name, :description, :content, :specification, product_ids: [], seo_tag_attributes: [:title, :description, :keywords])
     end
 end

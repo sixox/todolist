@@ -1,4 +1,6 @@
-
+<% content_for :title, @packing.seo_tag.title if defined?(@packing) && @packing.seo_tag.present? %>
+<% content_for :description, @packing.seo_tag.description if defined?(@packing) && @packing.seo_tag.present? %>
+<% content_for :keywords, @packing.seo_tag.keywords if defined?(@packing) && @packing.seo_tag.present? %>
 
 <%= render "layouts/slide"%>
 

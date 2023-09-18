@@ -27,7 +27,6 @@
   </div>
     <div>
     <%= form.label :specification, style: "display: block" %>
-    <%= form.text_area :specification %>
   </div>
 
   <div>
@@ -39,6 +38,32 @@
       </div>
     <% end %>
   </div>
+
+  <br>
+   <div>
+    <h2>Associated metatags:</h2>
+    <!-- Fields for the associated MetaTag -->
+  <%= form.fields_for :seo_tag do |meta_tag_fields| %>
+    <div class="form-group">
+      <%= meta_tag_fields.label :title, 'Meta Tag Title' %>
+      <%= meta_tag_fields.text_field :title, class: 'form-control' %>
+    </div>
+
+    <div class="form-group">
+      <%= meta_tag_fields.label :description, 'Meta Tag Description' %>
+      <%= meta_tag_fields.text_area :description, class: 'form-control' %>
+    </div>
+    <div class="form-group">
+      <%= meta_tag_fields.label :keywords, 'Meta Tag keywords' %>
+      <%= meta_tag_fields.text_field :keywords, class: 'form-control' %>
+    </div>
+
+    <!-- Add fields for other MetaTag attributes as needed -->
+
+  <% end %>
+
+  </div>
+  <br>
 
   <div>
 <%= form.submit "new packing", class: "btn btn-gradient big-btn", data: { turbo: false } %>    </div>
