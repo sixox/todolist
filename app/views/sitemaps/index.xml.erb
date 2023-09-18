@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc><%= root_url %></loc>
+    <lastmod><%= Time.now.strftime("%Y-%m-%dT%H:%M:%S%:z") %></lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <% @posts.each do |post| %>
+    <url>
+      <loc><%= url_for(post) %></loc>
+      <lastmod><%= post.updated_at.strftime("%Y-%m-%dT%H:%M:%S%:z") %></lastmod>
+      <changefreq>daily</changefreq>
+      <priority>0.8</priority>
+    </url>
+  <% end %>
+<% @grades.each do |post| %>
+    <url>
+      <loc><%= url_for(post) %></loc>
+      <lastmod><%= post.updated_at.strftime("%Y-%m-%dT%H:%M:%S%:z") %></lastmod>
+      <changefreq>daily</changefreq>
+      <priority>0.8</priority>
+    </url>
+  <% end %>
+<% @products.each do |post| %>
+    <url>
+      <loc><%= url_for(post) %></loc>
+      <lastmod><%= post.updated_at.strftime("%Y-%m-%dT%H:%M:%S%:z") %></lastmod>
+      <changefreq>daily</changefreq>
+      <priority>0.8</priority>
+    </url>
+  <% end %>
+<% @packings.each do |post| %>
+    <url>
+      <loc><%= url_for(post) %></loc>
+      <lastmod><%= post.updated_at.strftime("%Y-%m-%dT%H:%M:%S%:z") %></lastmod>
+      <changefreq>daily</changefreq>
+      <priority>0.8</priority>
+    </url>
+  <% end %>
+</urlset>
