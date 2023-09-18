@@ -1,3 +1,7 @@
+<% content_for :title, @product.seo_tag.title if defined?(@product) && @product.seo_tag.present? %>
+<% content_for :description, @product.seo_tag.description if defined?(@product) && @product.seo_tag.present? %>
+<% content_for :keywords, @product.seo_tag.keywords if defined?(@product) && @product.seo_tag.present? %>
+
 <%= render "layouts/slide"%>
 <%= render "layouts/productsmenu"%>
 

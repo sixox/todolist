@@ -15,6 +15,8 @@ class ProductsController < ApplicationController
     @product = Product.new
     @packings = Packing.all
     @applications = Post.where(kind: 'application').order(created_at: :desc)
+    @product.build_seo_tag
+
 
   end
 
@@ -22,6 +24,8 @@ class ProductsController < ApplicationController
   def edit
     @packings = Packing.all
     @applications = Post.where(kind: 'application').order(created_at: :desc)
+    @product.build_seo_tag if @product.seo_tag.nil?
+
   end
 
   # POST /products or /products.json
@@ -70,6 +74,6 @@ class ProductsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def product_params
-      params.require(:product).permit(:name, :description, :content, packing_ids: [], post_ids: [])
+      params.require(:product).permit(:name, :description, :content, packing_ids: [], post_ids: [], seo_tag_attributes: [:title, :description, :keywords])
     end
 end
