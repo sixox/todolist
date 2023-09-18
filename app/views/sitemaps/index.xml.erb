@@ -8,7 +8,7 @@
   </url>
   <% @posts.each do |post| %>
     <url>
-      <loc><%= url_for(post) %></loc>
+      <loc><%= post_url(post) %></loc>
       <lastmod><%= post.updated_at.strftime("%Y-%m-%dT%H:%M:%S%:z") %></lastmod>
       <changefreq>daily</changefreq>
       <priority>0.8</priority>
@@ -16,7 +16,7 @@
   <% end %>
 <% @grades.each do |post| %>
     <url>
-      <loc><%= url_for(post) %></loc>
+      <loc><%= grade_url(post) %></loc>
       <lastmod><%= post.updated_at.strftime("%Y-%m-%dT%H:%M:%S%:z") %></lastmod>
       <changefreq>daily</changefreq>
       <priority>0.8</priority>
@@ -24,7 +24,7 @@
   <% end %>
 <% @products.each do |post| %>
     <url>
-      <loc><%= url_for(post) %></loc>
+      <loc><%= product_url(post) %></loc>
       <lastmod><%= post.updated_at.strftime("%Y-%m-%dT%H:%M:%S%:z") %></lastmod>
       <changefreq>daily</changefreq>
       <priority>0.8</priority>
@@ -32,7 +32,7 @@
   <% end %>
 <% @packings.each do |post| %>
     <url>
-      <loc><%= url_for(post) %></loc>
+      <loc><%= packing_url(post) %></loc>
       <lastmod><%= post.updated_at.strftime("%Y-%m-%dT%H:%M:%S%:z") %></lastmod>
       <changefreq>daily</changefreq>
       <priority>0.8</priority>
