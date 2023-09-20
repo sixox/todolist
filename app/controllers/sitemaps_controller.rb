@@ -5,7 +5,9 @@ class SitemapsController < ApplicationController
    			 @products = Product.all
    			 @packings = Packing.all
    			 respond_to do |format|
-   			 	format.xml
+   			 	format.xml do
+   			 		headers['Content-Type'] = 'application/xml'
+   			 	end
    			 end
    			end
    		end
