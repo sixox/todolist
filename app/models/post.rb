@@ -1,4 +1,7 @@
 class Post < ApplicationRecord
+  extend FriendlyId
+  friendly_id :title, use: :slugged
+
   has_rich_text :content
   has_one_attached :image
   has_and_belongs_to_many :products
@@ -7,6 +10,8 @@ class Post < ApplicationRecord
 
 
   validate :image_content_type
+  validates :title, uniqueness: { case_sensitive: false }
+
 
   private
 

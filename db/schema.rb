@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_09_04_072101) do
+ActiveRecord::Schema[7.0].define(version: 2024_04_06_104607) do
   create_table "action_text_rich_texts", force: :cascade do |t|
     t.string "name", null: false
     t.text "body"
@@ -58,13 +58,26 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_04_072101) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "friendly_id_slugs", force: :cascade do |t|
+    t.string "slug", null: false
+    t.integer "sluggable_id", null: false
+    t.string "sluggable_type", limit: 50
+    t.string "scope"
+    t.datetime "created_at"
+    t.index ["slug", "sluggable_type", "scope"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type_and_scope", unique: true
+    t.index ["slug", "sluggable_type"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type"
+    t.index ["sluggable_type", "sluggable_id"], name: "index_friendly_id_slugs_on_sluggable_type_and_sluggable_id"
+  end
+
   create_table "grades", force: :cascade do |t|
     t.string "name"
     t.text "description"
     t.integer "product_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "slug"
     t.index ["product_id"], name: "index_grades_on_product_id"
+    t.index ["slug"], name: "index_grades_on_slug", unique: true
   end
 
   create_table "inquries", force: :cascade do |t|
@@ -96,6 +109,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_04_072101) do
     t.text "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "slug"
+    t.index ["slug"], name: "index_packings_on_slug", unique: true
   end
 
   create_table "packings_products", id: false, force: :cascade do |t|
@@ -112,6 +127,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_04_072101) do
     t.string "tag"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "slug"
+    t.index ["slug"], name: "index_posts_on_slug", unique: true
   end
 
   create_table "posts_products", id: false, force: :cascade do |t|
@@ -126,6 +143,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_04_072101) do
     t.text "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "slug"
+    t.index ["slug"], name: "index_products_on_slug", unique: true
   end
 
   create_table "seo_tags", force: :cascade do |t|

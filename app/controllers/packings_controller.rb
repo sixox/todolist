@@ -67,7 +67,7 @@ class PackingsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_packing
-      @packing = Packing.find(params[:id])
+      @packing = Packing.friendly.find(params[:id])
     end
 
     # Only allow a list of trusted parameters through.

@@ -89,3 +89,5 @@ gem 'recaptcha', '~> 5.0', require: 'recaptcha/rails'
 gem 'trix'
 gem 'actiontext'
 gem 'truncate_html'
+gem 'friendly_id', '~> 5.4.0'
+
