@@ -66,6 +66,14 @@ class ProductsController < ApplicationController
     end
   end
 
+  def redirect_to_slug
+    product = Product.find(params[:id])
+    redirect_to product_path(product), status: :moved_permanently
+  rescue ActiveRecord::RecordNotFound
+    # Handle the case where the product does not exist.
+    redirect_to products_path, status: :moved_permanently
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_product

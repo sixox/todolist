@@ -63,6 +63,14 @@ class PostsController < ApplicationController
     end
   end
 
+  def redirect_to_slug
+    post = Post.find(params[:id])
+    redirect_to post_path(post), status: :moved_permanently
+  rescue ActiveRecord::RecordNotFound
+    # Handle the case where the post does not exist.
+    redirect_to posts_path, status: :moved_permanently
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_post

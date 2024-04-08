@@ -64,6 +64,16 @@ class PackingsController < ApplicationController
     end
   end
 
+  def redirect_to_slug
+    puts "Redirecting to slug"
+    packing = Packing.find(params[:id])
+    redirect_to packing_path(packing), status: :moved_permanently
+  rescue ActiveRecord::RecordNotFound
+    redirect_to packings_path, status: :moved_permanently
+  end
+
+
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_packing
