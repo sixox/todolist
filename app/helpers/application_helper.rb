@@ -13,22 +13,26 @@ module ApplicationHelper
     end
   end
 
-  def canonical_url_tag
-    canonical_url = case controller_name
-                    when 'home'
-                      root_url
-                    when 'grades', 'products', 'posts', 'packings'
-                      if action_name == 'show' && params[:id].present?
-                        polymorphic_url(controller_name.classify.constantize.friendly.find(params[:id]))
-                      else
-                        polymorphic_url(controller_name)
-                      end
-                    else
-                      request.original_url
-                    end
-    tag.link(rel: 'canonical', href: canonical_url)
+  def canonical_url
+    case controller_name
+    when 'home'
+      root_url
+    when 'grades', 'products', 'posts', 'packings'
+      if action_name == 'show' && params[:id].present?
+        polymorphic_url(controller_name.classify.constantize.friendly.find(params[:id]))
+      else
+        polymorphic_url(controller_name)
+      end
+    else
+      request.original_url
+    end
   rescue ActiveRecord::RecordNotFound
-    tag.link(rel: 'canonical', href: root_url)
+    root_url
+  end
+
+  # Generates a canonical URL tag
+  def canonical_url_tag
+    tag.link(rel: 'canonical', href: canonical_url)
   end
 
 end

@@ -7,10 +7,10 @@
   <meta property="og:title" content="<%= yield(:title) || "Bitumen Price" %>">
   <meta property="og:description" content="<%= yield(:description) || "bitumen price in iran" %>">
   <meta property="og:image" content="<%= image_url('logo.png') %>">
-  <meta property="og:url" content="https://globalsynergy-co.org/">
+  <meta property="og:url" content="<%= canonical_url %>">
   <meta name="twitter:title" content="<%= yield(:title) || "Bitumen Price" %>">
   <meta name="twitter:description" content="<%= yield(:description) || "bitumen price in iran" %>">
-  <meta name="twitter:url" content="https://globalsynergy-co.org/">
+  <meta name="twitter:url" content="<%= canonical_url %>">
   <meta name="twitter:card" content="<%= yield(:description) || "bitumen price in iran" %>">
   <%= canonical_url_tag %>
 
