@@ -23,3 +23,46 @@
    </div>
  </div>
 </section>
+<%# Product Schema %>
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org/",
+    "@type": "Product",
+    "name": "<%= @grade.product.name %>",
+    "description": "<%= @grade.product.description %>",
+    "image": "",
+    "mpn": "HS Code", // Using HS code as the Manufacturer Part Number
+    "brand": {
+      "@type": "Brand",
+      "name": ""
+    },
+    "offers": {
+      "@type": "Offer",
+      "priceCurrency": "USD",
+      "price": "",
+      "availability": "https://schema.org/InStock"
+    }
+  }
+</script>
+
+<%# Grade Schema as part of the Product %>
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org/",
+    "@type": "Product",
+    "name": "<%= @grade.product.name %><%= @grade.name %>",
+    "description": "<%= @grade.description %>",
+    "category": "<%= @grade.product.name %>",
+    "mpn": "HS Code", // Using HS code as the Manufacturer Part Number
+    "brand": {
+      "@type": "Brand",
+      "name": ""
+    },
+    "offers": {
+      "@type": "Offer",
+      "priceCurrency": "USD",
+      "price": "",
+      "availability": "https://schema.org/InStock"
+    }
+  }
+</script>

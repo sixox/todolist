@@ -23,3 +23,47 @@
     </div>
   </div>
 </section>
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org/",
+    "@type": "Product",
+    "name": "<%= @product.name %>",
+    "description": "<%= @product.description %>",
+    "image": "",
+    "mpn": "HS Code", // Using HS code as the Manufacturer Part Number
+    "brand": {
+      "@type": "Brand",
+      "name": "Sepahan"
+    },
+    "offers": {
+      "@type": "Offer",
+      "priceCurrency": "USD",
+      "price": "",
+      "availability": "https://schema.org/InStock"
+    }
+  }
+</script>
+
+
+<% @product.grades.each do |grade| %>
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org/",
+      "@type": "Product",
+      "name": "<%= @product.name %> <%= grade.name %>",
+      "description": "<%= grade.description %>",
+      "mpn": "HS Code", // Using HS code as the Manufacturer Part Number
+      "brand": {
+        "@type": "Brand",
+        "name": "Jeyoil iranol"
+      },
+      "offers": {
+        "@type": "Offer",
+        "priceCurrency": "USD",
+        "price": "",
+        "availability": "https://schema.org/InStock"
+      }
+    }
+  </script>
+<% end %>
+

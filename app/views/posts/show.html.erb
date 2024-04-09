@@ -26,3 +26,30 @@
     </div>
   </div>
 </section>
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "<%= @post.kind == 'news' ? 'NewsArticle' : 'Article' %>",
+    "headline": "<%= @post.title %>",
+    "articleSection": "<%= @post.category %>",
+    "datePublished": "<%= @post.created_at.iso8601 %>",
+    "dateModified": "<%= @post.updated_at.iso8601 %>",
+    "keywords": "<%= @post.seo_tag.keywords if defined?(@post) && @post.seo_tag.present? %>",
+    <% if @post.image.attached? %>
+    "image": "<%= url_for(@post.image) %>",
+    <% end %>
+    "author": {
+      "@type": "Person",
+      "name": "Mohsen"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Global Synergy",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "<%= image_url('logo.png') %>"
+      }
+    }
+  }
+</script>
+

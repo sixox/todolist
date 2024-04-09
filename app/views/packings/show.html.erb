@@ -23,3 +23,22 @@
     </div>
   </div>
 </section>
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": "<%= @packing.name %>",
+    "description": "<%= @packing.description %>",
+    "image": "",
+    "brand": {
+      "@type": "Brand",
+      "name": "<%= @packing.name %>"
+    },
+    "offers": {
+      "@type": "Offer",
+      "priceCurrency": "USD",
+      "price": "",
+      "availability": "https://schema.org/InStock"
+    }
+  }
+</script>

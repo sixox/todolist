@@ -200,5 +200,27 @@
     </div>
   </div>
 </section>
+<!-- Before the closing body tag, insert the Product schema for the products -->
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      <% @products.each_with_index do |product, index| %>
+      {
+        "@type": "Product",
+        "name": "<%= product.name %>",
+        "image": "",
+        "description": "<%= product.description %>",
+        "offers": {
+          "@type": "Offer",
+          "priceCurrency": "USD",
+          "price": "",
+          "availability": "http://schema.org/InStock"
+        }
+      }<%= ',' unless index == @products.size - 1 %>
+      <% end %>
+    ]
+  }
+</script>
 
 
