@@ -36,7 +36,7 @@
     "dateModified": "<%= @post.updated_at.iso8601 %>",
     "keywords": "<%= @post.seo_tag.keywords if defined?(@post) && @post.seo_tag.present? %>",
     <% if @post.image.attached? %>
-    "image": "<%= url_for(@post.image) %>",
+      "image": "<%= rails_blob_url(@post.image, host: request.base_url) %>",
     <% end %>
     "author": {
       "@type": "Person",
