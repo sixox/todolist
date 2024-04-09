@@ -210,7 +210,11 @@
         "@type": "Product",
         "name": "<%= product.name %>",
         "image": "",
-        "description": "<%= product.description %>"
+        "description": "<%= product.description %>",
+        "offers": {
+          "@type": "Offer",
+          "availability": "http://schema.org/InStock"
+        }
       }<%= ',' unless index == @products.size - 1 %>
       <% end %>
     ]
