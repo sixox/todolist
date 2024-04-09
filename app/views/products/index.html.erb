@@ -210,13 +210,7 @@
         "@type": "Product",
         "name": "<%= product.name %>",
         "image": "",
-        "description": "<%= product.description %>",
-        "offers": {
-          "@type": "Offer",
-          "priceCurrency": "USD",
-          "price": "call",
-          "availability": "http://schema.org/InStock"
-        }
+        "description": "<%= product.description %>"
       }<%= ',' unless index == @products.size - 1 %>
       <% end %>
     ]
