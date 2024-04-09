@@ -34,9 +34,16 @@
       "@type": "Brand",
       "name": "<%= @packing.name %>"
     }
-        "offers": {
-          "@type": "Offer",
-          "availability": "http://schema.org/InStock"
+       "offers": {
+        "@type": "Offer",
+        "availability": "https://schema.org/InStock",
+        "priceSpecification": {
+          "@type": "PriceSpecification",
+          "price": "0", // Indicative starting price or minimum price
+          "minPrice": "0",
+          "maxPrice": "Contact for price",
+          "priceCurrency": "USD"
         }
+      }
   }
 </script>
