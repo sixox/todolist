@@ -2,16 +2,23 @@
 <html>
 <head>
   <title><%= yield(:title) || "Bitumen Price" %></title>
-  <meta name="description" content="<%= yield(:description) || "bitumen price in iran" %>">
-  <meta name="keywords" content="<%= yield(:keywords) || "bitumen price in iran" %>">
-  <meta property="og:title" content="<%= yield(:title) || "Bitumen Price" %>">
-  <meta property="og:description" content="<%= yield(:description) || "bitumen price in iran" %>">
-  <meta property="og:image" content="<%= image_url('logo.png') %>">
+  <meta name="description" content="<%= yield(:description) || "price of bitumen " %>">
+  <meta name="keywords" content="<%= yield(:keywords) || "price of bitumen " %>">
+
+  <!-- Open Graph tags -->
+  <meta property="og:title" content="<%= yield(:og_title) || yield(:title) || "Bitumen Price" %>">
+  <meta property="og:description" content="<%= yield(:og_description) || yield(:description) || "bitumen price in iran" %>">
+  <meta property="og:image" content="<%= yield(:og_image) || image_url('logo.png') %>">
   <meta property="og:url" content="<%= canonical_url %>">
-  <meta name="twitter:title" content="<%= yield(:title) || "Bitumen Price" %>">
-  <meta name="twitter:description" content="<%= yield(:description) || "bitumen price in iran" %>">
+
+  <!-- Twitter Card tags -->
+  <meta name="twitter:title" content="<%= yield(:twitter_title) || yield(:title) || "Bitumen Price" %>">
+  <meta name="twitter:description" content="<%= yield(:twitter_description) || yield(:description) || "bitumen price in iran" %>">
+  <meta name="twitter:image" content="<%= yield(:twitter_image) || image_url('logo.png') %>">
   <meta name="twitter:url" content="<%= canonical_url %>">
-  <meta name="twitter:card" content="<%= yield(:description) || "bitumen price in iran" %>">
+  <meta name="twitter:card" content="summary_large_image"> <!-- Usually either 'summary' or 'summary_large_image' -->
+
+  <!-- Canonical URL -->
   <%= canonical_url_tag %>
 
 
