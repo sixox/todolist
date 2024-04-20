@@ -63,7 +63,7 @@
          <div class="divider-45 hidden-below-lg"></div>
          <div class="divider-30 hidden-above-lg"></div>
          <ul class="list-styled">
-          <% @products.take(4).each do |bitumen| %>
+          <% @products.order(:created_at).limit(4).each do |bitumen| %>
           <li><%= link_to bitumen.name, product_path(bitumen), data: { turbo: false } %></li>
           <% end %>
         </ul>
@@ -105,9 +105,9 @@
          At Global Synergy, we proudly offer a comprehensive range of Semi-Refined Paraffin Wax products, each meticulously crafted to meet the diverse needs of various industries. Our high-quality wax is known for its versatility and ability to enhance the performance and quality of countless applications.          </p>
          <div class="divider-45 hidden-below-lg"></div>
          <div class="divider-30 hidden-above-lg"></div>
-         <% if @products[4] %>
+         <% if @products[8] %>
          <ul class="list-styled">
-          <% @products[4].grades.each do |paraffin| %>
+          <% @products[8].grades.each do |paraffin| %>
           <li><%= link_to paraffin.name, grade_path(paraffin), data: { turbo: false } %></li>
           <% end %>
         </ul>
