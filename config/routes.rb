@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   get '/posts/:id', to: 'posts#redirect_to_slug', constraints: { id: /\d+/ }
   get '/packings/:id', to: 'packings#redirect_to_slug', constraints: { id: /\d+/ }
 
+  get 'products/bitumen', to: 'products#bitumen'
 
 
   resources :grades

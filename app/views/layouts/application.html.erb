@@ -19,7 +19,11 @@
   <meta name="twitter:card" content="summary_large_image"> <!-- Usually either 'summary' or 'summary_large_image' -->
 
   <!-- Canonical URL -->
-  <%= canonical_url_tag %>
+  <% if content_for?(:canonical) %>
+    <link rel="canonical" href="<%= yield(:canonical) %>">
+  <% else %>
+    <%= canonical_url_tag %>
+  <% end %>
 
 
 
