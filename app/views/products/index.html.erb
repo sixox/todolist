@@ -1,3 +1,19 @@
+  <% content_for :title, "High-Quality Petroleum Products | Competitive Prices | Trusted Supplier" %>
+  <% content_for :description, "Explore our wide range of petroleum products including bitumen, paraffin wax, slack wax, RPO, base oil, footsoil, and urea. Get the best prices and reliable supply for your industrial needs. Visit now for more details!" %>
+  <% content_for :keywords, "petroleum products, buy bitumen, paraffin wax, slack wax, RPO, base oil, footsoil, urea, supplier, competitive prices" %>
+
+  <!-- Open Graph content -->
+  <% content_for :og_title, "High-Quality Petroleum Products at Competitive Prices" %>
+  <% content_for :og_description, "Secure a reliable and cost-effective supply of petroleum products. From bitumen to urea, our extensive product range guarantees quality and satisfaction." %>
+  <% content_for :og_image, image_url('/images/services/bitumen.jpg') %> <!-- Ensure you have an appropriate image -->
+
+  <!-- Twitter Card content -->
+  <% content_for :twitter_title, "High-Quality Petroleum Products | Trusted Global Supplier" %>
+  <% content_for :twitter_description, "Looking for premium petroleum products? Visit us to find everything from bitumen to urea at competitive prices. Secure your supply today!" %>
+  <% content_for :twitter_image, image_url('/images/services/bitumen.jpg') %> <!-- Ensure you have an appropriate image -->
+
+
+
 <%= render "layouts/slide"%>
 <%= render "layouts/productsmenu"%>
 
@@ -52,9 +68,8 @@
       <div class="col-xs-12 col-12 col-lg-6">
         <div class="content-center">
           <h2 class="special-heading numeric text-sm-left text-center">
-            <span class="text-capitalize">
-             Bitumen
-           </span>
+              <%= link_to 'Bitumen', products_bitumen_path, class: 'text-capitalize' %>
+
          </h2>
          <div class="divider-45 hidden-below-lg"></div>
          <div class="divider-30 hidden-above-lg"></div>
@@ -87,11 +102,12 @@
 
       <div class="col-xs-12 col-12 col-lg-6">
         <div class="content-center">
-          <h2 class="special-heading numeric text-sm-left text-center">
-            <span class="text-capitalize">
-             &nbsp; Paraffin Wax
-           </span>
-           <br>
+            <%= link_to safe_path_for(Product, "semi-refined-paraffin-wax"), data: { turbo: false }, class: 'text-capitalize' do %>
+            <h2 class="special-heading numeric text-sm-left text-center">
+              Paraffin Wax
+              <br>
+            </h2>
+            <% end %>
            <span class="h4 text-secondary">
              &nbsp; &nbsp; Semi Refined
            </span>
