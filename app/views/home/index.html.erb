@@ -54,7 +54,7 @@
 
 
 				<div class="row isotope-wrapper masonry-layout c-gutter-30 c-mb-30">
-					<% @products.order(:created_at).each do |product|%>
+					<% @products.each do |product|%>
 					<% product.grades.take(3).each do |grade|%>
 					<div class="col-xl-4 col-md-6 <%= product.name.parameterize %> ">
 						<div class="icon-box service-single ls with-icon rounded big-padding text-center articlecard" style="padding: 38px 60px !important;">

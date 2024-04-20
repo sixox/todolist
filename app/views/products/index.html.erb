@@ -160,7 +160,7 @@
         </div>
         <div class="row isotope-wrapper portfolio masonry-layout c-mb-30" data-filters=".gallery-filters">
 
-          <% @products.order(:created_at).each do |product|%>
+          <% @products.each do |product|%>
           <% product.grades.each do |grade|%>
           <div class="col-xl-4 col-sm-6 <%= product.name.parameterize %>">
             <div class="card text-center">

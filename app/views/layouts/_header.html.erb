@@ -198,7 +198,23 @@
 									</div> <!-- eof mega menu -->
 								</li>
 								<!-- eof features -->
-
+								<li>
+									<%= link_to 'Products', products_path %>
+									<ul>
+										<li>
+											<%= link_to 'Bitumen', products_bitumen_path %>
+										</li>
+										<li>
+											<%= link_to "Paraffin Wax", safe_path_for(Product, "semi-refined-paraffin-wax"), data: { turbo: false } %>
+										</li>
+										<li>
+											<%= link_to "Slack Wax", safe_path_for(Product, "slack-wax"), data: { turbo: false } %>
+										</li>
+										<li>
+											<%= link_to "Slack Wax", safe_path_for(Product, "slack-wax"), data: { turbo: false } %>
+										</li>
+									</ul>
+								</li>
 
 								<!-- blog -->
 								<li>
