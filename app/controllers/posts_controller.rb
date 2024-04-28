@@ -5,6 +5,7 @@ class PostsController < ApplicationController
   # GET /posts or /posts.json
   def index
     @latest_articles = Post.where.not(kind: 'news').order(created_at: :desc)
+    @title = "Latest Articles"
   end
 
   # GET /posts/1 or /posts/1.json
@@ -14,16 +15,19 @@ class PostsController < ApplicationController
 
   def applications
     @latest_articles = Post.where(kind: 'application').order(created_at: :desc)
+    @title = "Applications"
     render "index"
   end
 
   def news
     @latest_articles = Post.where(kind: 'news').order(created_at: :desc)
+    @title = "News"
     render "index"
   end
 
   def articles
     @latest_articles = Post.where.not(kind: 'news').order(created_at: :desc)
+    @title = "Latest Articles"
     render "index"
   end
 
