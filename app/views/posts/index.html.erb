@@ -1,4 +1,32 @@
-<%= render partial: 'layouts/bread', locals: { title: "BLOG", middle: "BLOG", last: "ALL", bread_path: @bread_path } %>
+<% content_for :title, "Latest Bitumen Industry Insights | Market Trends | Global Supplier News" %>
+<% content_for :description, "Stay updated with the latest bitumen industry insights, market trends, and global supplier news. Dive into detailed articles for a deep understanding of the bitumen market." %>
+<% content_for :keywords, "bitumen industry, bitumen market trends, bitumen insights, global bitumen news, bitumen supplier updates" %>
+
+<% content_for :og_title, "Explore the Latest in Bitumen Industry Insights and Trends" %>
+<% content_for :og_description, "Discover in-depth articles and analysis on bitumen market trends, supplier news, and industry forecasts. Your ultimate source for bitumen industry updates." %>
+
+
+
+<% content_for :twitter_title, "Latest Bitumen Market Insights | Read Now!" %>
+<% content_for :twitter_description, "Catch up on the latest trends and news in the bitumen industry. Click to read detailed articles from trusted global suppliers and market analysts." %>
+
+
+
+
+
+  <% base_url = root_url.chomp('/') %>
+  <% if action_name == 'index' %>
+    <% canonical_url = base_url + '/posts' %>
+  <% elsif ['news', 'applications', 'articles'].include?(action_name) %>
+    <% canonical_url = base_url + "/posts/#{action_name}" %>
+  <% else %>
+    <% canonical_url = base_url %>
+  <% end %>
+  <% content_for :canonical, canonical_url %>
+
+
+
+<%= render partial: 'layouts/bread', locals: { title: "BLOG", middle: "BLOG", last: action_name, bread_path: @bread_path } %>
 <section class="ls ms s-pt-xl-160 s-pb-xl-280 s-pt-lg-130 s-pb-lg-250 s-py-md-90 s-py-60 c-gutter-60">
   <div class="container">
     <div class="row">
