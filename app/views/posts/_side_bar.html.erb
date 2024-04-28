@@ -1,0 +1,91 @@
+<aside class="col-lg-5 col-xl-4">
+          <div class="widget widget_recent_entries">
+
+            <h3 class="widget-title">Recent Entries</h3>
+
+            <ul>
+              <% @posts.drop(10).take(6).each do |article| %>
+              <li>
+                <%= link_to article.title, post_path(article), data: { turbo: false } %>
+                <br>
+                <span>
+                  <i class="far fa-calendar-alt"></i>
+                  <%= link_to article.created_at.strftime("%d %b %y"), post_path(article), data: { turbo: false, class: "text-danger" }  %>                 </span> 
+                </li>
+                <% end %>
+              </ul>
+            </div>
+            <div class="widget widget_slider">
+
+              <h3 class="widget-title">Applications</h3>
+
+              <div class="owl-carousel" data-nav="true" data-loop="true" data-autoplay="true" data-items="1" data-responsive-lg="1" data-responsive-md="1" data-responsive-sm="1" data-responsive-xs="1">
+
+                <% @application_posts.each do |application| %>
+                <div class="vertical-item">
+                  <div class="item-media">
+                    <% if application.image.attached? %>
+                    <%= image_tag application.image, alt: "buy bitumen, bitumen price" %>
+                    <% end %>           
+                  </div>
+                  <div class="item-content">
+                    <h4>
+                      <%= link_to application.title, post_path(application), data: { turbo: false } %>
+
+                    </h4>
+                    <p class="item-meta">
+                      <i class="far fa-calendar-alt"></i>
+                      <%= link_to application.created_at.strftime("%d %b %y"), post_path(application), data: { turbo: false }  %>
+
+                    </p>
+
+                  </div>
+                </div>
+                <!-- .vertical-item -->
+                <% end %>
+
+              </div>
+              <!-- .owl-carousel -->
+
+            </div>
+            <div class="widget widget_tag_cloud">
+
+              <h3 class="widget-title">Tags</h3>
+
+              <div class="tagcloud text-center">
+
+                <a href="#" class="tag-cloud-link">
+                  Bitumen
+                </a>
+
+                <a href="#" class="tag-cloud-link">
+                  RPO
+                </a>
+
+                <a href="#" class="tag-cloud-link">
+                  Products
+                </a>
+
+                <a href="#" class="tag-cloud-link">
+                  Market
+                </a>
+
+                <a href="#" class="tag-cloud-link">
+                  Price
+                </a>
+                <a href="#" class="tag-cloud-link">
+                  Applications
+                </a>
+                <a href="#" class="tag-cloud-link">
+                  Packings
+                </a>
+                <a href="#" class="tag-cloud-link">
+                  Oil products
+                </a>
+
+              </div>
+            </div>
+
+
+
+          </aside>

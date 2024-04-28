@@ -1,14 +1,57 @@
-<p style="color: green"><%= notice %></p>
+<%= render partial: 'layouts/bread', locals: { title: "BLOG", middle: "BLOG", last: "ALL", bread_path: @bread_path } %>
+<section class="ls ms s-pt-xl-160 s-pb-xl-280 s-pt-lg-130 s-pb-lg-250 s-py-md-90 s-py-60 c-gutter-60">
+  <div class="container">
+    <div class="row">
+      <main class="col-lg-7 col-xl-8">
+          <h2 class="special-heading text-center">
+            <span class="text-capitalize">
+              Latest Articles
+            </span>
+          </h2>
+          <p class="special-heading text-center">
+            <span class="text-capitalize color-darkgrey bold">
+              our blog
+            </span>
+          </p>
+          <div class="divider-50 hidden-below-lg"></div>
+          <div class="divider-30 hidden-above-lg"></div>
+          <div class="col-lg-12">
 
-<h1>Posts</h1>
+            <div class="row isotope-wrapper portfolio masonry-layout c-mb-30">
+              <% @latest_articles.take(10).each do |article|%>
+              <div class="col-xl-6 col-md-6">
+                <div class="vertical-item text-center content-padding rounded overflow-hidden">
+                  <div class="item-media">
+                    <% if article.image.attached? %>
+                    <%= image_tag article.image, class: 'rounded', alt: "buy bitumen, bitumen price" %>
+                    <% end %>
+                    
+                  </div>
+                  <div class="item-content">
+                    <h6>
 
-<div id="posts">
-  <% @posts.each do |post| %>
-    <%= render post %>
-    <p>
-      <%= link_to "Show this post", post %>
-    </p>
-  <% end %>
-</div>
+                      <%= link_to article.title, post_path(article), data: { turbo: false } %>
 
-<%= link_to "New post", new_post_path %>
+                    </h6>
+
+                    <p>
+                      <%= truncate_html(article.content.body.to_html, length: 150) %> <%= link_to "Read more", post_path(article), data: { turbo: false } %>
+                    </p>
+
+                  </div>
+                </div>
+
+              </div>
+              <% end %>
+
+
+            </div>
+            <!-- .isotope-wrapper-->
+          </div>
+        </main>
+      <%= render "side_bar" %>
+    </div>
+  </div>
+</section>
+
+

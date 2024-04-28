@@ -1,13 +1,30 @@
 class PostsController < ApplicationController
   before_action :set_post, only: %i[ show edit update destroy ]
+  before_action :set_side, only: %i[ show index applications news articles ]
 
   # GET /posts or /posts.json
   def index
-    @posts = Post.all
+    @latest_articles = Post.where.not(kind: 'news').order(created_at: :desc)
   end
 
   # GET /posts/1 or /posts/1.json
-  def show
+  def show  
+    @latest_articles = Post.where.not(kind: 'news').order(created_at: :desc)
+  end
+
+  def applications
+    @latest_articles = Post.where(kind: 'application').order(created_at: :desc)
+    render "index"
+  end
+
+  def news
+    @latest_articles = Post.where(kind: 'news').order(created_at: :desc)
+    render "index"
+  end
+
+  def articles
+    @latest_articles = Post.where.not(kind: 'news').order(created_at: :desc)
+    render "index"
   end
 
   # GET /posts/new
@@ -75,6 +92,13 @@ class PostsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_post
       @post = Post.friendly.find(params[:id])
+    end
+
+    def set_side
+      @posts = Post.all
+      @bread_path = posts_path
+      @latest_news = Post.where(kind: 'news').order(created_at: :desc).limit(3)
+      @application_posts = Post.where(kind: 'application')
     end
 
     # Only allow a list of trusted parameters through.

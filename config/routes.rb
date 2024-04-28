@@ -13,7 +13,13 @@ Rails.application.routes.draw do
 
   resources :grades
   resources :products
-  resources :posts
+  resources :posts do
+    collection do
+      get :applications
+      get :news
+      get :articles
+    end
+  end
   resources :packings
 
   get 'form/index'

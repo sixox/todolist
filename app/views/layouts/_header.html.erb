@@ -230,17 +230,17 @@
 
 								<!-- blog -->
 								<li>
-									<a href="blog-right.html">Blog</a>
+									<%= link_to "Blog", posts_path %>
 									<ul>
 
 										<li>
-											<a href="#">Applications</a>
+											<%= link_to "Applications", applications_posts_path,data: { turbo: false } %>
 										</li>
 										<li>
-											<a href="#">News</a>
+											<%= link_to "News", news_posts_path, data: { turbo: false } %>
 										</li>
 										<li>
-											<a href="#">Articles</a>
+											<%= link_to "Articles", articles_posts_path, data: { turbo: false } %>
 										</li>
 
 

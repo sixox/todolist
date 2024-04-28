@@ -2,10 +2,14 @@
 <% content_for :description, @post.seo_tag.description if defined?(@post) && @post.seo_tag.present? %>
 <% content_for :keywords, @post.seo_tag.keywords if defined?(@post) && @post.seo_tag.present? %>
 
-<section class="ls ms text-sm-left text-center s-pt-xl-160 s-pt-lg-130 s-pt-md-90 s-pt-60 s-pb-xl-280 s-pb-lg-250 s-pb-md-90 s-pb-60 c-gutter-60">
+<%= render partial: 'layouts/bread', locals: { title: @post.title, middle: "BLOG", last: @post.kind, bread_path: @bread_path } %>
+
+<section class="ls ms s-pt-xl-160 s-pb-xl-280 s-pt-lg-130 s-pb-lg-250 s-py-md-90 s-py-60 c-gutter-60">
   <div class="container">
     <div class="row">
-      <div class="col-12 col-xl-10 offset-xl-1">
+      <main class="col-lg-7 col-xl-8">
+        <article class="vertical-item single-post bordered post type-post status-publish format-standard has-post-thumbnail">
+                <div class="col-12 col-xl-10 offset-xl-1">
         <% if @post.image.attached? %>
         <%= image_tag @post.image, class: 'rounded' %>
         <% end %>
@@ -23,9 +27,20 @@
         <div class="divider-60 hidden-below-lg"></div>
         <div class="divider-30 hidden-above-lg"></div>
       </div>
+        </article>
+
+
+
+
+      </main>
+      <%= render "side_bar" %>
+
     </div>
   </div>
 </section>
+
+
+
 <script type="application/ld+json">
   {
     "@context": "https://schema.org",
